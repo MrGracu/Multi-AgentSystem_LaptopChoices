@@ -105,7 +105,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 }
                 
                 output("Wszyscy agenci wrócili", Color.Green);
-                //SwitchProgram();
+                SwitchProgram();
 
                 //tabControl1.SelectedIndex = 3;
             }
