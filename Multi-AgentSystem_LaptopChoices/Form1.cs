@@ -48,6 +48,17 @@ namespace Multi_AgentSystem_LaptopChoices
             else if (string.IsNullOrEmpty(night_usageSelect.Text)) result = false;
             else if (string.IsNullOrEmpty(cd_playerSelect.Text)) result = false;
 
+            if(!result)
+            {
+                MessageBox.Show("Należy wypełnić wszystkie parametry w zakładce \"Preferencje\"", "Niepoprawne dane Preferencji");
+                return result;
+            }
+            else if (min_price.Value > max_price.Value)
+            {
+                MessageBox.Show("Minimalna kwota nie może być większa od maksymalej", "Niepoprawne dane Preferencji");
+                return false;
+            }
+
             /*if (string.IsNullOrEmpty(comboBox1.Text))
             {
                 MessageBox.Show("No Item is Selected");
@@ -70,35 +81,33 @@ namespace Multi_AgentSystem_LaptopChoices
                 programRunning = false;
                 output("Zatrzymuję...", Color.Green);
                 startStopProgram.Text = "Start";
+                preferencesContainer.Enabled = true;
                 customerAgentsTab.Clear();
             }
             else
             {
-                if(!ValidatePreferences())
-                {
-                    MessageBox.Show("Należy wypełnić wszystkie parametry w zakładce \"Preferencje\"", "Niepoprawne dane Preferencji");
-                    return;
-                }
+                if (!ValidatePreferences()) return;
 
-                tabPage4.Controls.Clear();
+                resultBox.Controls.Clear();
 
+                preferencesContainer.Enabled = false;
                 programRunning = true;
                 output("Uruchamiam...", Color.Green);
                 startStopProgram.Text = "Stop";
 
                 for (int i = 1; i <= customerAgentsNumber.Value; i++)
                 {
-                    CustomerAgent customer = new CustomerAgent(i, tabPage4, output);
+                    CustomerAgent customer = new CustomerAgent(i, resultBox, output);
 
                     customer.GetDatabase(i);
 
                     customerAgentsTab.Add(customer);
                 }
-
+                
                 output("Wszyscy agenci wrócili", Color.Green);
-                SwitchProgram();
+                //SwitchProgram();
 
-                tabControl1.SelectedIndex = 3;
+                //tabControl1.SelectedIndex = 3;
             }
         }
 
@@ -114,7 +123,7 @@ namespace Multi_AgentSystem_LaptopChoices
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if(programRunning && e.TabPageIndex < 2) e.Cancel = true;
+            if(programRunning && e.TabPageIndex < 1) e.Cancel = true;
         }
     }
 }

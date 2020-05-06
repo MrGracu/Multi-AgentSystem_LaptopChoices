@@ -12,17 +12,17 @@ namespace Multi_AgentSystem_LaptopChoices
     class CustomerAgent
     {
         private int customerID;
-        private TabPage resultTab;
+        private Panel resultBox;
         private Action<string, Color?> output;
 
         /*private int price;
         private string name;
         private string link;*/
 
-        public CustomerAgent(int id, TabPage instance, Action<string, Color?> writeConsole)
+        public CustomerAgent(int id, Panel instance, Action<string, Color?> writeConsole)
         {
             this.customerID = id;
-            this.resultTab = instance;
+            this.resultBox = instance;
             this.output = writeConsole;
         }
 
@@ -111,7 +111,7 @@ namespace Multi_AgentSystem_LaptopChoices
                         box.Controls.Add(mylab1);
                         box.Controls.Add(mylab);
 
-                        resultTab.Controls.Add(box);
+                        resultBox.Controls.Add(box);
                     }
 
                     output(("Agent nr " + customerID + " wrócił z przedmiotem"), Color.Blue);
