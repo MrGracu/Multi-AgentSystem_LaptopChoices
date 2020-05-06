@@ -88,10 +88,9 @@ namespace Multi_AgentSystem_LaptopChoices
 
                 for (int i = 1; i <= customerAgentsNumber.Value; i++)
                 {
-                    CustomerAgent customer = new CustomerAgent(i);
+                    CustomerAgent customer = new CustomerAgent(i, tabPage4, output);
 
-                    customer.GetDatabase(tabPage4, i);
-                    output(customer.GetInfo(), Color.Blue);
+                    customer.GetDatabase(i);
 
                     customerAgentsTab.Add(customer);
                 }

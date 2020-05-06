@@ -12,14 +12,18 @@ namespace Multi_AgentSystem_LaptopChoices
     class CustomerAgent
     {
         private int customerID;
+        private TabPage resultTab;
+        private Action<string, Color?> output;
 
         /*private int price;
         private string name;
         private string link;*/
 
-        public CustomerAgent(int id)
+        public CustomerAgent(int id, TabPage instance, Action<string, Color?> writeConsole)
         {
             this.customerID = id;
+            this.resultTab = instance;
+            this.output = writeConsole;
         }
 
         private void OpenLink(object sender, LinkLabelLinkClickedEventArgs e)
@@ -32,7 +36,7 @@ namespace Multi_AgentSystem_LaptopChoices
             //Here select product
         }
 
-        public void GetDatabase(TabPage instance, int id)
+        public void GetDatabase(int id)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
 
@@ -107,8 +111,10 @@ namespace Multi_AgentSystem_LaptopChoices
                         box.Controls.Add(mylab1);
                         box.Controls.Add(mylab);
 
-                        instance.Controls.Add(box);
+                        resultTab.Controls.Add(box);
                     }
+
+                    output(("Agent nr " + customerID + " wrócił z przedmiotem"), Color.Blue);
                 }
                 else
                 {
@@ -123,11 +129,6 @@ namespace Multi_AgentSystem_LaptopChoices
             }
 
             //return outPut;
-        }
-
-        public string GetInfo()
-        {
-            return ("Agent nr " + customerID + " wrócił z przedmiotem");
         }
     }
 }
