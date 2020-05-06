@@ -22,12 +22,17 @@ namespace Multi_AgentSystem_LaptopChoices
             this.customerID = id;
         }
 
-        private void openLink(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OpenLink(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
         }
 
-        public void getDatabase(TabPage instance, int id)
+        private void SelectProduct(object sender, EventArgs e)
+        {
+            //Here select product
+        }
+
+        public void GetDatabase(TabPage instance, int id)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
 
@@ -58,6 +63,7 @@ namespace Multi_AgentSystem_LaptopChoices
                         box.Dock = DockStyle.Top;
                         box.Text = "Produkt agenta nr " + customerID;
                         box.Name = "groupBoxAgent" + customerID;
+                        box.Height = 120;
 
                         Label mylab = new Label();
                         mylab.Text = ("Model: " + reader.GetString(1));
@@ -82,9 +88,21 @@ namespace Multi_AgentSystem_LaptopChoices
                         dynamicLinkLabel.Name = "linkAgent" + customerID;
                         dynamicLinkLabel.Font = new Font("Calibri", 12);
                         dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, reader.GetString(3));
-                        dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(openLink);
+                        dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(OpenLink);
                         dynamicLinkLabel.Dock = DockStyle.Top;
 
+                        Button dynamicButton = new Button();
+                        dynamicButton.Height = 30;
+                        //dynamicButton.Width = 300;
+                        //dynamicButton.BackColor = Color.Red;
+                        //dynamicButton.ForeColor = Color.Blue;
+                        dynamicButton.Text = "Wybierz tę ofertę";
+                        dynamicButton.Name = "buttonAgent" + customerID;
+                        dynamicButton.Font = new Font("Calibri", 12);
+                        dynamicButton.Click += new EventHandler(SelectProduct);
+                        dynamicButton.Dock = DockStyle.Top;
+
+                        box.Controls.Add(dynamicButton);
                         box.Controls.Add(dynamicLinkLabel);
                         box.Controls.Add(mylab1);
                         box.Controls.Add(mylab);
@@ -107,7 +125,7 @@ namespace Multi_AgentSystem_LaptopChoices
             //return outPut;
         }
 
-        public string getInfo()
+        public string GetInfo()
         {
             return ("Agent nr " + customerID + " wrócił z przedmiotem");
         }
