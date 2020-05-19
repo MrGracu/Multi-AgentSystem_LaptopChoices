@@ -20,8 +20,12 @@ namespace Multi_AgentSystem_LaptopChoices
 
         string connectionStringSeller = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
 
-        List<AgentTask> customerAgentsTab = new List<AgentTask>();
+        List<Task> customerAgentsTab = new List<Task>();
         List<AgentTask> sellerAgentsTab = new List<AgentTask>();
+
+        int[] parameters = new int[8];
+        int[] priority = new int[8];
+        int minPrice, maxPrice;
 
         private void output(string text, Color? c = null)
         {
@@ -75,7 +79,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 finished = true;
                 foreach (var agent in customerAgentsTab)
                 {
-                    if (!agent.task.IsCompleted) finished = false;
+                    if (!agent.IsCompleted) finished = false;
                 }
                 await Task.Delay(500);
             }
@@ -118,13 +122,34 @@ namespace Multi_AgentSystem_LaptopChoices
                 output("Uruchamiam...", Color.Green);
                 startStopProgram.Text = "Stop";
 
+                parameters[0] = 1 + how_many_dataSelect.SelectedIndex;
+                priority[0] = how_many_dataPriority.Value;
+                parameters[1] = 4 + preferred_laptopSelect.SelectedIndex;
+                priority[1] = preferred_laptopPriority.Value;
+                parameters[2] = 7 + size_of_laptopSelect.SelectedIndex;
+                priority[2] = size_of_laptopPriority.Value;
+                parameters[3] = 10 + laptop_usageSelect.SelectedIndex;
+                priority[3] = laptop_usagePriority.Value;
+                parameters[4] = 14 + laptop_battery_usageSelect.SelectedIndex;
+                priority[4] = laptop_battery_usagePriority.Value;
+                parameters[5] = 17 + laptop_durabilitySelect.SelectedIndex;
+                priority[5] = laptop_durabilityPriority.Value;
+                parameters[6] = 20 + night_usageSelect.SelectedIndex;
+                priority[6] = night_usagePriority.Value;
+                parameters[7] = 23 + cd_playerSelect.SelectedIndex;
+                priority[7] = cd_playerPriority.Value;
+
+                minPrice = Decimal.ToInt32(min_price.Value);
+                maxPrice = Decimal.ToInt32(max_price.Value);
+                
                 for (int i = 1; i <= sellerAgentsNumber.Value; i++)
                 {
                     SellerAgent temp = new SellerAgent(i, outConsole, ref random);
                     AgentTask agentTask = new AgentTask();
-                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response, ref agentTask.isBusy));
+                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response));
 
                     agentTask.SetAgentTask(ref tempTask);
+                    agentTask.id = i;
 
                     sellerAgentsTab.Add(agentTask);
                 }
@@ -132,12 +157,8 @@ namespace Multi_AgentSystem_LaptopChoices
                 for (int i = 1; i <= customerAgentsNumber.Value; i++)
                 {
                     CustomerAgent temp = new CustomerAgent(i, Decimal.ToInt32(maxLapsNumber.Value), resultBox, outConsole);
-                    AgentTask agentTask = new AgentTask();
-                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response, ref agentTask.isBusy));
 
-                    agentTask.SetAgentTask(ref tempTask);
-
-                    customerAgentsTab.Add(agentTask);
+                    customerAgentsTab.Add(Task.Run(() => temp.RunAgent(ref stopTasks, ref sellerAgentsTab, ref parameters, ref priority, ref maxPrice, ref minPrice)));
                 }
 
                 CustomersFinished();

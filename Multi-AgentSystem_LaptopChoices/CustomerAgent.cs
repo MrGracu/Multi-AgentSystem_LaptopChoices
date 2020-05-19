@@ -15,11 +15,11 @@ namespace Multi_AgentSystem_LaptopChoices
         private int maxLaps;
         private Panel resultBox;
         private RichTextBox console;
-        private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
+        private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_customer;";
 
-        /*private int price;
+        private int price;
         private string name;
-        private string link;*/
+        private string link;
 
         public CustomerAgent(int id, int maxLaps, Panel instance, RichTextBox writeConsole)
         {
@@ -29,14 +29,78 @@ namespace Multi_AgentSystem_LaptopChoices
             this.console = writeConsole;
         }
 
-        public void RunAgent(ref bool stopAgent, ref List<object> recieve, ref List<object> response, ref bool isBusy)
+        public void RunAgent(ref bool stopAgent, ref List<AgentTask> sellerAgentsTab, ref int[] parameters, ref int[] priority, ref int maxPrice, ref int minPrice)
         {
-            output("Klient nr " + agentID + " startuje...", Color.Blue);
-            GetDatabase(agentID);
-            /*while (true)
+            output("Klient nr " + agentID + ": Startuje...", Color.Blue);
+
+            bool haveItem = false;
+            for (int i = 0; i < maxLaps; i++)
             {
                 if (stopAgent) return;
-            }*/
+
+                foreach (AgentTask seller in sellerAgentsTab)
+                {
+                    if (stopAgent) return;
+
+                    if (!seller.IsBusy(ref parameters))
+                    {
+                        output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " nie jest zajęty, przekazuję parametry i oczekuję propozycji sprzedawcy...", Color.OrangeRed);
+
+                        bool endOfConversation = false;
+                        do
+                        {
+                            if (stopAgent) return;
+
+                            while (seller.response.Count == 0)
+                            {
+                                if (stopAgent) return;
+                            }
+
+                            string[] res = (string[])seller.response[0];
+                            if (res[0] != "-1")
+                            {
+                                price = Int32.Parse(res[2]);
+                                output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł przedmiot w cenie " + price + " zł", Color.OrangeRed);
+
+                                if (price > minPrice && price < maxPrice)
+                                {
+                                    output("Klient nr " + agentID + ": Przedmiot został wybrany", Color.OrangeRed);
+                                    name = res[0];
+                                    link = res[3];
+                                    haveItem = true;
+                                    endOfConversation = true;
+                                    seller.recieve.Add(true);
+                                }
+                                else
+                                {
+                                    output("Klient nr " + agentID + ": Przedmiot nie mieścił sie w cenie, czekam na inne propozycje", Color.OrangeRed);
+                                    seller.recieve.Add(false);
+                                }
+                                seller.response.Clear();
+                            }
+                            else
+                            {
+                                output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " nie spełnił wymagań, opuszczam", Color.OrangeRed);
+                                endOfConversation = true;
+                                seller.response.Clear();
+                            }
+                        } while (!endOfConversation);
+
+                        if (haveItem) break;
+                    }
+                    else output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " jest zajęty", Color.OrangeRed);
+                }
+                if (haveItem) break;
+            }
+
+            if (haveItem)
+            {
+                ShowItem();
+            }
+            else
+            {
+                output("Klient nr " + agentID + ": Nie znalazłem przedmiotu", Color.Purple);
+            }
         }
 
         private void output(string text, Color? c = null)
@@ -64,90 +128,55 @@ namespace Multi_AgentSystem_LaptopChoices
             //Here select product
         }
 
-        public void GetDatabase(int id)
+        public void ShowItem()
         {
-            string query = "SELECT * FROM items WHERE id=" + id;
+            GroupBox box = new GroupBox();
+            box.Dock = DockStyle.Top;
+            box.Text = "Produkt agenta nr " + agentID;
+            box.Name = "groupBoxAgent" + agentID;
+            box.Height = 120;
 
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
+            Label mylab = new Label();
+            mylab.Text = ("Model: " + name);
+            mylab.Dock = DockStyle.Top;
+            mylab.Font = new Font("Calibri", 12);
+            mylab.ForeColor = Color.Green;
 
-            try
-            {
-                // Open the database
-                databaseConnection.Open();
+            Label mylab1 = new Label();
+            mylab1.Text = ("Cena: " + price + " zł");
+            mylab1.Dock = DockStyle.Top;
+            mylab1.Font = new Font("Calibri", 12);
+            mylab1.ForeColor = Color.Green;
 
-                // Execute the query
-                reader = commandDatabase.ExecuteReader();
+            LinkLabel dynamicLinkLabel = new LinkLabel();
+            dynamicLinkLabel.ForeColor = Color.Black;
+            dynamicLinkLabel.ActiveLinkColor = Color.Black;
+            dynamicLinkLabel.VisitedLinkColor = Color.Black;
+            dynamicLinkLabel.LinkColor = Color.Black;
+            dynamicLinkLabel.DisabledLinkColor = Color.Black;
+            dynamicLinkLabel.Text = "Link do sklepu";
+            dynamicLinkLabel.Name = "linkAgent" + agentID;
+            dynamicLinkLabel.Font = new Font("Calibri", 12);
+            dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, link);
+            dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(OpenLink);
+            dynamicLinkLabel.Dock = DockStyle.Top;
 
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        //string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3) };
+            Button dynamicButton = new Button();
+            dynamicButton.Height = 30;
+            dynamicButton.Text = "Wybierz tę ofertę klienta nr " + agentID;
+            dynamicButton.Name = "buttonAgent" + agentID;
+            dynamicButton.Font = new Font("Calibri", 12);
+            dynamicButton.Click += new EventHandler(SelectProduct);
+            dynamicButton.Dock = DockStyle.Top;
 
-                        GroupBox box = new GroupBox();
-                        box.Dock = DockStyle.Top;
-                        box.Text = "Produkt agenta nr " + agentID;
-                        box.Name = "groupBoxAgent" + agentID;
-                        box.Height = 120;
+            box.Controls.Add(dynamicButton);
+            box.Controls.Add(dynamicLinkLabel);
+            box.Controls.Add(mylab1);
+            box.Controls.Add(mylab);
 
-                        Label mylab = new Label();
-                        mylab.Text = ("Model: " + reader.GetString(1));
-                        mylab.Dock = DockStyle.Top;
-                        mylab.Font = new Font("Calibri", 12);
-                        mylab.ForeColor = Color.Green;
+            resultBox.Invoke((MethodInvoker)delegate { resultBox.Controls.Add(box); });
 
-                        Label mylab1 = new Label();
-                        mylab1.Text = ("Cena: " + reader.GetString(2) + " zł");
-                        mylab1.Dock = DockStyle.Top;
-                        mylab1.Font = new Font("Calibri", 12);
-                        mylab1.ForeColor = Color.Green;
-
-                        LinkLabel dynamicLinkLabel = new LinkLabel();
-                        dynamicLinkLabel.ForeColor = Color.Black;
-                        dynamicLinkLabel.ActiveLinkColor = Color.Black;
-                        dynamicLinkLabel.VisitedLinkColor = Color.Black;
-                        dynamicLinkLabel.LinkColor = Color.Black;
-                        dynamicLinkLabel.DisabledLinkColor = Color.Black;
-                        dynamicLinkLabel.Text = "Link do sklepu";
-                        dynamicLinkLabel.Name = "linkAgent" + agentID;
-                        dynamicLinkLabel.Font = new Font("Calibri", 12);
-                        dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, reader.GetString(3));
-                        dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(OpenLink);
-                        dynamicLinkLabel.Dock = DockStyle.Top;
-
-                        Button dynamicButton = new Button();
-                        dynamicButton.Height = 30;
-                        dynamicButton.Text = "Wybierz tę ofertę klienta nr " + agentID;
-                        dynamicButton.Name = "buttonAgent" + agentID;
-                        dynamicButton.Font = new Font("Calibri", 12);
-                        dynamicButton.Click += new EventHandler(SelectProduct);
-                        dynamicButton.Dock = DockStyle.Top;
-
-                        box.Controls.Add(dynamicButton);
-                        box.Controls.Add(dynamicLinkLabel);
-                        box.Controls.Add(mylab1);
-                        box.Controls.Add(mylab);
-
-                        resultBox.Invoke((MethodInvoker)delegate { resultBox.Controls.Add(box); });
-                    }
-
-                    output("Klient nr " + agentID + " wrócił z przedmiotem", Color.Purple);
-                    Console.WriteLine(agentID);
-                }
-                else
-                {
-                    Console.WriteLine("No rows");
-                }
-
-                databaseConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            output("Klient nr " + agentID + ": Wróciłem z przedmiotem", Color.Purple);
         }
     }
 }

@@ -11,11 +11,27 @@ namespace Multi_AgentSystem_LaptopChoices
         public Task task;
         public List<object> response;
         public List<object> recieve;
-        public bool isBusy;
+        public int id;
 
         public void SetAgentTask(ref Task task)
         {
             this.task = task;
+            this.response = new List<object>();
+            this.recieve = new List<object>();
+        }
+
+        public bool IsBusy(ref int[] parameters)
+        {
+            bool busy = false;
+            if (response.Count > 0 || recieve.Count > 0)
+            {
+                busy = true;
+            }
+            else
+            {
+                recieve.Add(parameters);
+            }
+            return busy;
         }
     }
 }

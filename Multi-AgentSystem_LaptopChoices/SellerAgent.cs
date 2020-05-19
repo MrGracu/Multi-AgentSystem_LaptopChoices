@@ -89,7 +89,7 @@ namespace Multi_AgentSystem_LaptopChoices
                     databaseConnection.Open();
                     MySqlDataReader myReader = commandDatabase.ExecuteReader();
                     databaseConnection.Close();
-                    output("Agent nr " + agentID + ": Utworzono bazę danych z produktami", Color.DarkGray);
+                    output("Sprzedawca nr " + agentID + ": Utworzono bazę danych z produktami", Color.DarkGray);
                     rows.Clear();
                 }
             }
@@ -99,12 +99,103 @@ namespace Multi_AgentSystem_LaptopChoices
             }
         }
 
-        public void RunAgent(ref bool stopAgent, ref List<object> recieve, ref List<object> response, ref bool isBusy)
+        public void RunAgent(ref bool stopAgent, ref List<object> recieve, ref List<object> response)
         {
-            output("Sprzadawca nr " + agentID + " startuje...", Color.Blue);
+            output("Sprzadawca nr " + agentID + ": Startuje...", Color.Blue);
             while (true)
             {
                 if (stopAgent) return;
+
+                if (recieve.Count > 0)
+                {
+                    output("Sprzedawca nr " + agentID + ": Otrzymałem parametry i rozpoczynam rozmowę z klientem", Color.Blue);
+                    int[] parameters = (int[])recieve[0];
+
+                    string query = "SELECT itemsspecification.id_items, name, amount, agent_" + agentID + "_productstable.price, link, COUNT(itemsspecification.id_items) AS `colsAmout`, SUM(itemsspecification.priority) AS `points` FROM itemsSpecification " +
+                                    "INNER JOIN items ON itemsspecification.id_items = items.id " +
+                                    "INNER JOIN agent_" + agentID + "_productstable ON items.id = agent_" + agentID + "_productstable.id_items " +
+                                    "WHERE (";
+
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        query += " itemsspecification.id_preferencesOptions = " + parameters[i];
+                        if((i + 1) < parameters.Length)
+                        {
+                            query += " OR";
+                        }
+                        else
+                        {
+                            query += ") AND itemsspecification.priority >= '1' AND amount > 0 GROUP BY itemsspecification.id_items HAVING colsAmout = " + parameters.Length + " ORDER BY points DESC;";
+                        }
+                    }
+
+                    Console.WriteLine(query);
+                    response.Clear();
+                    //query = "SELECT * FROM itemsspecification WHERE id=999";
+
+                    List<string[]> foundProducts = new List<string[]>();
+
+                    MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                    MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+                    commandDatabase.CommandTimeout = 60;
+                    databaseConnection.Open();
+                    MySqlDataReader reader = commandDatabase.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            foundProducts.Add(new string[] { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) });
+                        }
+                    }
+                    databaseConnection.Close();
+
+                    if (foundProducts.Count > 0)
+                    {
+                        int selectedID = 0;
+                        bool consumerSelected = false;
+                        output("Sprzedawca nr " + agentID + ": Znalazłem produkty pasujące (" + foundProducts.Count + "), przekazuję jeden klientowi...", Color.Blue);
+                        for (int i = 0; i < foundProducts.Count; i++)
+                        {
+                            response.Add(new string[] { foundProducts[i][1], foundProducts[i][2], foundProducts[i][3], foundProducts[i][4] });
+                            recieve.Clear();
+                            while (recieve.Count == 0) //Waiting for decision
+                            {
+                                if (stopAgent) return;
+                            }
+                            consumerSelected = (bool)recieve[0];
+                            selectedID = i;
+
+                            if (consumerSelected) break;
+                            else output("Sprzedawca nr " + agentID + ": Klient odrzucił przedmiot, sprawdzam czy mam inny, aby przekazać...", Color.Blue);
+                        }
+
+                        if(consumerSelected)
+                        {
+                            output("Sprzedawca nr " + agentID + ": Klient wybrał przedmiot, sprzedaję...", Color.Blue);
+                            //Change in database amount of items
+                            query = "UPDATE agent_" + agentID + "_productstable SET amount=" + (int.Parse(foundProducts[selectedID][2]) - 1) + " WHERE id_items = " + foundProducts[selectedID][0];
+                            Console.WriteLine(query);
+                            commandDatabase = new MySqlCommand(query, databaseConnection);
+                            commandDatabase.CommandTimeout = 60;
+                            databaseConnection.Open();
+                            reader = commandDatabase.ExecuteReader();
+                            databaseConnection.Close();
+
+                            output("Sprzedawca nr " + agentID + ": Zaktualizowano ilość produktów", Color.Blue);
+                        }
+                        else
+                        {
+                            output("Sprzedawca nr " + agentID + ": Klient NIE ZNALAZŁ przedmiotu", Color.Blue);
+                            response.Add(new string[] { "-1" });
+                        }
+                        recieve.Clear();
+                    }
+                    else
+                    {
+                        response.Add(new string[] { "-1" });
+                        recieve.Clear();
+                    }
+                }
             }
         }
 
@@ -121,72 +212,6 @@ namespace Multi_AgentSystem_LaptopChoices
                 console.SelectionStart = console.Text.Length;
                 console.ScrollToCaret();
             });
-        }
-
-        public void GetDatabase(int id)
-        {
-            string query = "SELECT * FROM items WHERE id=" + id;
-
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
-
-            try
-            {
-                // Open the database
-                databaseConnection.Open();
-
-                // Execute the query
-                reader = commandDatabase.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        //string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3) };
-
-                        GroupBox box = new GroupBox();
-                        box.Dock = DockStyle.Top;
-                        box.Text = "Produkt agenta nr " + agentID;
-                        box.Name = "groupBoxAgent" + agentID;
-                        box.Height = 120;
-
-                        Label mylab = new Label();
-                        mylab.Text = ("Model: " + reader.GetString(1));
-                        mylab.Dock = DockStyle.Top;
-                        mylab.Font = new Font("Calibri", 12);
-                        mylab.ForeColor = Color.Green;
-
-                        Label mylab1 = new Label();
-                        mylab1.Text = ("Cena: " + reader.GetString(2) + " zł");
-                        mylab1.Dock = DockStyle.Top;
-                        mylab1.Font = new Font("Calibri", 12);
-                        mylab1.ForeColor = Color.Green;
-
-                        LinkLabel dynamicLinkLabel = new LinkLabel();
-                        dynamicLinkLabel.ForeColor = Color.Black;
-                        dynamicLinkLabel.ActiveLinkColor = Color.Black;
-                        dynamicLinkLabel.VisitedLinkColor = Color.Black;
-                        dynamicLinkLabel.LinkColor = Color.Black;
-                        dynamicLinkLabel.DisabledLinkColor = Color.Black;
-                        dynamicLinkLabel.Text = "Link do sklepu";
-                        dynamicLinkLabel.Name = "linkAgent" + agentID;
-                        dynamicLinkLabel.Font = new Font("Calibri", 12);
-                        dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, reader.GetString(3));
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No rows");
-                }
-
-                databaseConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }
