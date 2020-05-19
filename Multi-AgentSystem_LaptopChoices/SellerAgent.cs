@@ -1,42 +1,111 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Multi_AgentSystem_LaptopChoices
 {
-    class CustomerAgent
+    class SellerAgent
     {
         private int agentID;
-        private int maxLaps;
-        private Panel resultBox;
         private RichTextBox console;
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
 
-        /*private int price;
-        private string name;
-        private string link;*/
-
-        public CustomerAgent(int id, int maxLaps, Panel instance, RichTextBox writeConsole)
+        public SellerAgent(int id, RichTextBox writeConsole, ref Random rnd)
         {
             this.agentID = id;
-            this.maxLaps = maxLaps;
-            this.resultBox = instance;
             this.console = writeConsole;
+
+            string query = "CREATE TABLE IF NOT EXISTS agent_" + agentID + "_ProductsTable (" +
+                              "id INTEGER PRIMARY KEY AUTO_INCREMENT," +
+                              "id_items INTEGER NOT NULL," +
+                              "amount INTEGER NOT NULL DEFAULT 0," +
+                              "price INTEGER NOT NULL," +
+                              "negotiation_percentage INTEGER NOT NULL," +
+                              "FOREIGN KEY(id_items) REFERENCES items(id)" +
+                            ") ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci;";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+                databaseConnection.Close();
+
+                query = "SELECT * FROM agent_" + agentID + "_ProductsTable";
+                commandDatabase = new MySqlCommand(query, databaseConnection);
+                commandDatabase.CommandTimeout = 60;
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                bool hasRows = true;
+                if (!reader.HasRows)
+                {
+                    hasRows = false;
+                }
+                databaseConnection.Close();
+
+                if (!hasRows)
+                {
+                    query = "SELECT * FROM items";
+                    commandDatabase = new MySqlCommand(query, databaseConnection);
+                    commandDatabase.CommandTimeout = 60;
+                    databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    int amount = 0;
+                    List<string[]> rows = new List<string[]>();
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(2) };
+                        rows.Add(row);
+                        ++amount;
+                    }
+                    databaseConnection.Close();
+
+                    for(int i = 0; i < rows.Count; ++i)
+                    {
+                        int j = rnd.Next(rows.Count);
+                        string[] temp = rows[j];
+                        rows[j] = rows[i];
+                        rows[i] = temp;
+                    }
+
+                    query = "INSERT INTO agent_" + agentID + "_ProductsTable(`id_items`, `amount`, `price`, `negotiation_percentage`) VALUES";
+                    for(int i = 0; i < rows.Count; ++i)
+                    {
+                        int wynik = Convert.ToInt32(Math.Round((double.Parse(rows[i][1]) * ((90 + rnd.Next(21)) / 100.0)), MidpointRounding.AwayFromZero));
+                        query += " (" + rows[i][0] + ", " + ((rows.Count * 0.75) > i ? rnd.Next(1, 9) : 0) + ", " + wynik + ", " + rnd.Next(21) + ")";
+                        if ((i + 1) < rows.Count) query += ",";
+                        else query += ";";
+                    }
+                    commandDatabase = new MySqlCommand(query, databaseConnection);
+                    commandDatabase.CommandTimeout = 60;
+                    databaseConnection.Open();
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                    databaseConnection.Close();
+                    output("Agent nr " + agentID + ": Utworzono bazę danych z produktami", Color.DarkGray);
+                    rows.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void RunAgent(ref bool stopAgent, ref List<object> recieve, ref List<object> response, ref bool isBusy)
         {
-            output("Klient nr " + agentID + " startuje...", Color.Blue);
-            GetDatabase(agentID);
-            /*while (true)
+            output("Sprzadawca nr " + agentID + " startuje...", Color.Blue);
+            while (true)
             {
                 if (stopAgent) return;
-            }*/
+            }
         }
 
         private void output(string text, Color? c = null)
@@ -52,16 +121,6 @@ namespace Multi_AgentSystem_LaptopChoices
                 console.SelectionStart = console.Text.Length;
                 console.ScrollToCaret();
             });
-        }
-
-        private void OpenLink(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
-        }
-
-        private void SelectProduct(object sender, EventArgs e)
-        {
-            //Here select product
         }
 
         public void GetDatabase(int id)
@@ -115,27 +174,7 @@ namespace Multi_AgentSystem_LaptopChoices
                         dynamicLinkLabel.Name = "linkAgent" + agentID;
                         dynamicLinkLabel.Font = new Font("Calibri", 12);
                         dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, reader.GetString(3));
-                        dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(OpenLink);
-                        dynamicLinkLabel.Dock = DockStyle.Top;
-
-                        Button dynamicButton = new Button();
-                        dynamicButton.Height = 30;
-                        dynamicButton.Text = "Wybierz tę ofertę klienta nr " + agentID;
-                        dynamicButton.Name = "buttonAgent" + agentID;
-                        dynamicButton.Font = new Font("Calibri", 12);
-                        dynamicButton.Click += new EventHandler(SelectProduct);
-                        dynamicButton.Dock = DockStyle.Top;
-
-                        box.Controls.Add(dynamicButton);
-                        box.Controls.Add(dynamicLinkLabel);
-                        box.Controls.Add(mylab1);
-                        box.Controls.Add(mylab);
-
-                        resultBox.Invoke((MethodInvoker)delegate { resultBox.Controls.Add(box); });
                     }
-
-                    output("Klient nr " + agentID + " wrócił z przedmiotem", Color.Purple);
-                    Console.WriteLine(agentID);
                 }
                 else
                 {

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,8 +16,12 @@ namespace Multi_AgentSystem_LaptopChoices
     {
         bool programRunning = false;
         Random random = new Random();
+        bool stopTasks = false;
 
-        List<CustomerAgent> customerAgentsTab = new List<CustomerAgent>();
+        string connectionStringSeller = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
+
+        List<AgentTask> customerAgentsTab = new List<AgentTask>();
+        List<AgentTask> sellerAgentsTab = new List<AgentTask>();
 
         private void output(string text, Color? c = null)
         {
@@ -27,7 +33,6 @@ namespace Multi_AgentSystem_LaptopChoices
             outConsole.AppendText(text + Environment.NewLine);
             outConsole.SelectionStart = outConsole.Text.Length;
             outConsole.ScrollToCaret();
-            //outConsole.Refresh();
         }
 
         public Form1()
@@ -59,19 +64,34 @@ namespace Multi_AgentSystem_LaptopChoices
                 return false;
             }
 
-            /*if (string.IsNullOrEmpty(comboBox1.Text))
-            {
-                MessageBox.Show("No Item is Selected");
-            }
-            else
-            {
-                MessageBox.Show("Item Selected is:" + comboBox1.Text);
-            }*/
-            //Item m = comboBox.Items[comboBox.SelectedIndex];
-            //if(comboBox.SelectedIndex > -1) //somthing was selected
-            //Item m = comboBox.SelectedItem;
-
             return result;
+        }
+
+        private async Task<bool> WaitForCustomers()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                finished = true;
+                foreach (var agent in customerAgentsTab)
+                {
+                    if (!agent.task.IsCompleted) finished = false;
+                }
+                await Task.Delay(500);
+            }
+
+            if(finished && programRunning)
+            {
+                output("Wszyscy agenci wrócili", Color.YellowGreen);
+                SwitchProgram();
+            }
+
+            return finished;
+        }
+
+        private void CustomersFinished()
+        {
+            WaitForCustomers();
         }
 
         private void SwitchProgram()
@@ -82,12 +102,15 @@ namespace Multi_AgentSystem_LaptopChoices
                 output("Zatrzymuję...", Color.Green);
                 startStopProgram.Text = "Start";
                 preferencesContainer.Enabled = true;
-                customerAgentsTab.Clear();
+                stopTasks = true;
             }
             else
             {
                 if (!ValidatePreferences()) return;
 
+                stopTasks = false;
+                customerAgentsTab.Clear();
+                sellerAgentsTab.Clear();
                 resultBox.Controls.Clear();
 
                 preferencesContainer.Enabled = false;
@@ -95,19 +118,29 @@ namespace Multi_AgentSystem_LaptopChoices
                 output("Uruchamiam...", Color.Green);
                 startStopProgram.Text = "Stop";
 
+                for (int i = 1; i <= sellerAgentsNumber.Value; i++)
+                {
+                    SellerAgent temp = new SellerAgent(i, outConsole, ref random);
+                    AgentTask agentTask = new AgentTask();
+                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response, ref agentTask.isBusy));
+
+                    agentTask.SetAgentTask(ref tempTask);
+
+                    sellerAgentsTab.Add(agentTask);
+                }
+
                 for (int i = 1; i <= customerAgentsNumber.Value; i++)
                 {
-                    CustomerAgent customer = new CustomerAgent(i, resultBox, output);
+                    CustomerAgent temp = new CustomerAgent(i, Decimal.ToInt32(maxLapsNumber.Value), resultBox, outConsole);
+                    AgentTask agentTask = new AgentTask();
+                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response, ref agentTask.isBusy));
 
-                    customer.GetDatabase(i);
+                    agentTask.SetAgentTask(ref tempTask);
 
-                    customerAgentsTab.Add(customer);
+                    customerAgentsTab.Add(agentTask);
                 }
-                
-                output("Wszyscy agenci wrócili", Color.Green);
-                SwitchProgram();
 
-                //tabControl1.SelectedIndex = 3;
+                CustomersFinished();
             }
         }
 
@@ -124,6 +157,52 @@ namespace Multi_AgentSystem_LaptopChoices
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             if(programRunning && e.TabPageIndex < 1) e.Cancel = true;
+        }
+
+        private void clearCustomersDatabaseButton_Click(object sender, EventArgs e)
+        {
+            //cos tutaj
+        }
+
+        private void clearSellersDatabaseButton_Click(object sender, EventArgs e)
+        {
+            string query = "SHOW TABLES LIKE 'agent_%';";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionStringSeller);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                query = "";
+                databaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    query = "DROP TABLE IF EXISTS";
+                    while (reader.Read())
+                    {
+                        query += " " + reader.GetString(0) + ",";
+                    }
+                    query = query.Remove(query.Length - 1, 1) + ";";
+                }
+                databaseConnection.Close();
+
+                if(query.Length > 0)
+                {
+                    commandDatabase = new MySqlCommand(query, databaseConnection);
+                    commandDatabase.CommandTimeout = 60;
+                    databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    databaseConnection.Close();
+                    output("Zresetowano bazy danych sprzedawców", Color.Red);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

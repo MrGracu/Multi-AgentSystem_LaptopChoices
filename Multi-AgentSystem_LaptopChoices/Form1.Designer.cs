@@ -43,69 +43,69 @@
             this.clearCustomersDatabaseButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.max_priceGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.min_price = new System.Windows.Forms.NumericUpDown();
-            this.cd_playerGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.cd_playerPriority = new System.Windows.Forms.TrackBar();
-            this.cd_playerSelect = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.night_usageGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.night_usagePriority = new System.Windows.Forms.TrackBar();
-            this.night_usageSelect = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.laptop_durabilityGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.laptop_durabilityPriority = new System.Windows.Forms.TrackBar();
-            this.laptop_durabilitySelect = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.laptop_battery_usageGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.laptop_battery_usagePriority = new System.Windows.Forms.TrackBar();
-            this.laptop_battery_usageSelect = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.laptop_usageGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.laptop_usagePriority = new System.Windows.Forms.TrackBar();
-            this.laptop_usageSelect = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.size_of_laptopGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.size_of_laptopPriority = new System.Windows.Forms.TrackBar();
-            this.size_of_laptopSelect = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.preferred_laptopGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.preferred_laptopPriority = new System.Windows.Forms.TrackBar();
-            this.preferred_laptopSelect = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.startStopProgram = new System.Windows.Forms.Button();
+            this.preferencesContainer = new System.Windows.Forms.Panel();
             this.how_many_dataGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.how_many_dataPriority = new System.Windows.Forms.TrackBar();
             this.how_many_dataSelect = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.preferred_laptopGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.preferred_laptopPriority = new System.Windows.Forms.TrackBar();
+            this.preferred_laptopSelect = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.max_price = new System.Windows.Forms.NumericUpDown();
+            this.size_of_laptopGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.size_of_laptopPriority = new System.Windows.Forms.TrackBar();
+            this.size_of_laptopSelect = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.laptop_usageGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.laptop_usagePriority = new System.Windows.Forms.TrackBar();
+            this.laptop_usageSelect = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.max_priceGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.min_price = new System.Windows.Forms.NumericUpDown();
+            this.laptop_battery_usageGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.laptop_battery_usagePriority = new System.Windows.Forms.TrackBar();
+            this.laptop_battery_usageSelect = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cd_playerGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.cd_playerPriority = new System.Windows.Forms.TrackBar();
+            this.cd_playerSelect = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.laptop_durabilityGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.laptop_durabilityPriority = new System.Windows.Forms.TrackBar();
+            this.laptop_durabilitySelect = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.night_usageGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.night_usagePriority = new System.Windows.Forms.TrackBar();
+            this.night_usageSelect = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.resultGroupBox = new System.Windows.Forms.GroupBox();
+            this.resultBox = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.outConsole = new System.Windows.Forms.RichTextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.clearConsole = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.max_price = new System.Windows.Forms.NumericUpDown();
-            this.startStopProgram = new System.Windows.Forms.Button();
-            this.resultGroupBox = new System.Windows.Forms.GroupBox();
-            this.resultBox = new System.Windows.Forms.Panel();
-            this.preferencesContainer = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -116,41 +116,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerAgentsNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellerAgentsNumber)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.max_priceGroupBox.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.min_price)).BeginInit();
-            this.cd_playerGroupBox.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cd_playerPriority)).BeginInit();
-            this.night_usageGroupBox.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.night_usagePriority)).BeginInit();
-            this.laptop_durabilityGroupBox.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laptop_durabilityPriority)).BeginInit();
-            this.laptop_battery_usageGroupBox.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laptop_battery_usagePriority)).BeginInit();
-            this.laptop_usageGroupBox.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laptop_usagePriority)).BeginInit();
-            this.size_of_laptopGroupBox.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.size_of_laptopPriority)).BeginInit();
-            this.preferred_laptopGroupBox.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.preferred_laptopPriority)).BeginInit();
+            this.preferencesContainer.SuspendLayout();
             this.how_many_dataGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.how_many_dataPriority)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.preferred_laptopGroupBox.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.preferred_laptopPriority)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.max_price)).BeginInit();
+            this.size_of_laptopGroupBox.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.size_of_laptopPriority)).BeginInit();
+            this.laptop_usageGroupBox.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptop_usagePriority)).BeginInit();
+            this.max_priceGroupBox.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.min_price)).BeginInit();
+            this.laptop_battery_usageGroupBox.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptop_battery_usagePriority)).BeginInit();
+            this.cd_playerGroupBox.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cd_playerPriority)).BeginInit();
+            this.laptop_durabilityGroupBox.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptop_durabilityPriority)).BeginInit();
+            this.night_usageGroupBox.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.night_usagePriority)).BeginInit();
             this.resultGroupBox.SuspendLayout();
-            this.preferencesContainer.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -222,8 +222,8 @@
             // maxLapsNumber
             // 
             this.maxLapsNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maxLapsNumber.Location = new System.Drawing.Point(307, 10);
-            this.maxLapsNumber.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.maxLapsNumber.Location = new System.Drawing.Point(297, 10);
+            this.maxLapsNumber.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.maxLapsNumber.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -288,8 +288,9 @@
             this.clearSellersDatabaseButton.Name = "clearSellersDatabaseButton";
             this.clearSellersDatabaseButton.Size = new System.Drawing.Size(370, 25);
             this.clearSellersDatabaseButton.TabIndex = 4;
-            this.clearSellersDatabaseButton.Text = "Wyczyść bazę danych sprzedawców";
+            this.clearSellersDatabaseButton.Text = "Resetuj bazy danych sprzedawców";
             this.clearSellersDatabaseButton.UseVisualStyleBackColor = true;
+            this.clearSellersDatabaseButton.Click += new System.EventHandler(this.clearSellersDatabaseButton_Click);
             // 
             // label1
             // 
@@ -341,8 +342,9 @@
             this.clearCustomersDatabaseButton.Name = "clearCustomersDatabaseButton";
             this.clearCustomersDatabaseButton.Size = new System.Drawing.Size(370, 25);
             this.clearCustomersDatabaseButton.TabIndex = 3;
-            this.clearCustomersDatabaseButton.Text = "Wyczyść bazę danych agentów klienta";
+            this.clearCustomersDatabaseButton.Text = "Resetuj bazy danych agentów klienta";
             this.clearCustomersDatabaseButton.UseVisualStyleBackColor = true;
+            this.clearCustomersDatabaseButton.Click += new System.EventHandler(this.clearCustomersDatabaseButton_Click);
             // 
             // label2
             // 
@@ -369,415 +371,354 @@
             this.tabPage2.Text = "Preferencje";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // max_priceGroupBox
+            // startStopProgram
             // 
-            this.max_priceGroupBox.Controls.Add(this.tableLayoutPanel10);
-            this.max_priceGroupBox.Location = new System.Drawing.Point(3, 540);
-            this.max_priceGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.max_priceGroupBox.Name = "max_priceGroupBox";
-            this.max_priceGroupBox.Size = new System.Drawing.Size(179, 61);
-            this.max_priceGroupBox.TabIndex = 8;
-            this.max_priceGroupBox.TabStop = false;
-            this.max_priceGroupBox.Text = "Za jaką minimalną kwotę?";
+            this.startStopProgram.Location = new System.Drawing.Point(6, 614);
+            this.startStopProgram.Name = "startStopProgram";
+            this.startStopProgram.Size = new System.Drawing.Size(361, 30);
+            this.startStopProgram.TabIndex = 19;
+            this.startStopProgram.Text = "Start";
+            this.startStopProgram.UseVisualStyleBackColor = true;
+            this.startStopProgram.Click += new System.EventHandler(this.startStopProgram_Click);
             // 
-            // tableLayoutPanel10
+            // preferencesContainer
             // 
-            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel10.ColumnCount = 1;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Controls.Add(this.min_price, 0, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(179, 47);
-            this.tableLayoutPanel10.TabIndex = 0;
+            this.preferencesContainer.Controls.Add(this.how_many_dataGroupBox);
+            this.preferencesContainer.Controls.Add(this.preferred_laptopGroupBox);
+            this.preferencesContainer.Controls.Add(this.groupBox2);
+            this.preferencesContainer.Controls.Add(this.size_of_laptopGroupBox);
+            this.preferencesContainer.Controls.Add(this.laptop_usageGroupBox);
+            this.preferencesContainer.Controls.Add(this.max_priceGroupBox);
+            this.preferencesContainer.Controls.Add(this.laptop_battery_usageGroupBox);
+            this.preferencesContainer.Controls.Add(this.cd_playerGroupBox);
+            this.preferencesContainer.Controls.Add(this.laptop_durabilityGroupBox);
+            this.preferencesContainer.Controls.Add(this.night_usageGroupBox);
+            this.preferencesContainer.Location = new System.Drawing.Point(0, 0);
+            this.preferencesContainer.Name = "preferencesContainer";
+            this.preferencesContainer.Size = new System.Drawing.Size(371, 604);
+            this.preferencesContainer.TabIndex = 20;
             // 
-            // min_price
+            // how_many_dataGroupBox
             // 
-            this.min_price.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.min_price.Location = new System.Drawing.Point(20, 13);
-            this.min_price.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.min_price.Maximum = new decimal(new int[] {
+            this.how_many_dataGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.how_many_dataGroupBox.Controls.Add(this.tableLayoutPanel2);
+            this.how_many_dataGroupBox.Location = new System.Drawing.Point(3, 4);
+            this.how_many_dataGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.how_many_dataGroupBox.Name = "how_many_dataGroupBox";
+            this.how_many_dataGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.how_many_dataGroupBox.TabIndex = 0;
+            this.how_many_dataGroupBox.TabStop = false;
+            this.how_many_dataGroupBox.Text = "Ile danych byłoby przechowywanych?";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel2.Controls.Add(this.how_many_dataPriority, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.how_many_dataSelect, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 3, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // how_many_dataPriority
+            // 
+            this.how_many_dataPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.how_many_dataPriority.AutoSize = false;
+            this.how_many_dataPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.how_many_dataPriority.LargeChange = 1;
+            this.how_many_dataPriority.Location = new System.Drawing.Point(210, 6);
+            this.how_many_dataPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.how_many_dataPriority.Maximum = 3;
+            this.how_many_dataPriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.how_many_dataPriority.Minimum = 1;
+            this.how_many_dataPriority.Name = "how_many_dataPriority";
+            this.how_many_dataPriority.Size = new System.Drawing.Size(94, 30);
+            this.how_many_dataPriority.TabIndex = 2;
+            this.how_many_dataPriority.Value = 3;
+            // 
+            // how_many_dataSelect
+            // 
+            this.how_many_dataSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.how_many_dataSelect.FormattingEnabled = true;
+            this.how_many_dataSelect.Items.AddRange(new object[] {
+            "Bardzo Dużo",
+            "Dużo",
+            "Mało"});
+            this.how_many_dataSelect.Location = new System.Drawing.Point(20, 10);
+            this.how_many_dataSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.how_many_dataSelect.Name = "how_many_dataSelect";
+            this.how_many_dataSelect.Size = new System.Drawing.Size(124, 23);
+            this.how_many_dataSelect.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(164, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "MIN(1)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(307, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "MAX(3)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // preferred_laptopGroupBox
+            // 
+            this.preferred_laptopGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.preferred_laptopGroupBox.Controls.Add(this.tableLayoutPanel3);
+            this.preferred_laptopGroupBox.Location = new System.Drawing.Point(3, 71);
+            this.preferred_laptopGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.preferred_laptopGroupBox.Name = "preferred_laptopGroupBox";
+            this.preferred_laptopGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.preferred_laptopGroupBox.TabIndex = 1;
+            this.preferred_laptopGroupBox.TabStop = false;
+            this.preferred_laptopGroupBox.Text = "Preferowany wygląd laptopa?";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel3.Controls.Add(this.preferred_laptopPriority, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.preferred_laptopSelect, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 3, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // preferred_laptopPriority
+            // 
+            this.preferred_laptopPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.preferred_laptopPriority.AutoSize = false;
+            this.preferred_laptopPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.preferred_laptopPriority.LargeChange = 1;
+            this.preferred_laptopPriority.Location = new System.Drawing.Point(210, 6);
+            this.preferred_laptopPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.preferred_laptopPriority.Maximum = 3;
+            this.preferred_laptopPriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.preferred_laptopPriority.Minimum = 1;
+            this.preferred_laptopPriority.Name = "preferred_laptopPriority";
+            this.preferred_laptopPriority.Size = new System.Drawing.Size(94, 30);
+            this.preferred_laptopPriority.TabIndex = 4;
+            this.preferred_laptopPriority.Value = 3;
+            // 
+            // preferred_laptopSelect
+            // 
+            this.preferred_laptopSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.preferred_laptopSelect.FormattingEnabled = true;
+            this.preferred_laptopSelect.Items.AddRange(new object[] {
+            "Ciemny",
+            "Jasny",
+            "Kolorowy"});
+            this.preferred_laptopSelect.Location = new System.Drawing.Point(20, 11);
+            this.preferred_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.preferred_laptopSelect.Name = "preferred_laptopSelect";
+            this.preferred_laptopSelect.Size = new System.Drawing.Size(124, 23);
+            this.preferred_laptopSelect.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(164, 16);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "MIN(1)";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(307, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "MAX(3)";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableLayoutPanel13);
+            this.groupBox2.Location = new System.Drawing.Point(188, 540);
+            this.groupBox2.MaximumSize = new System.Drawing.Size(560, 90);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(179, 61);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Za jaką maksymalną kwotę?";
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.Controls.Add(this.max_price, 0, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(179, 47);
+            this.tableLayoutPanel13.TabIndex = 0;
+            // 
+            // max_price
+            // 
+            this.max_price.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.max_price.Location = new System.Drawing.Point(20, 13);
+            this.max_price.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.max_price.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.min_price.Minimum = new decimal(new int[] {
+            this.max_price.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.min_price.Name = "min_price";
-            this.min_price.Size = new System.Drawing.Size(139, 21);
-            this.min_price.TabIndex = 17;
-            this.min_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.min_price.ThousandsSeparator = true;
-            this.min_price.Value = new decimal(new int[] {
+            this.max_price.Name = "max_price";
+            this.max_price.Size = new System.Drawing.Size(139, 21);
+            this.max_price.TabIndex = 18;
+            this.max_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.max_price.ThousandsSeparator = true;
+            this.max_price.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // cd_playerGroupBox
+            // size_of_laptopGroupBox
             // 
-            this.cd_playerGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.size_of_laptopGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cd_playerGroupBox.Controls.Add(this.tableLayoutPanel9);
-            this.cd_playerGroupBox.Location = new System.Drawing.Point(3, 473);
-            this.cd_playerGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.cd_playerGroupBox.Name = "cd_playerGroupBox";
-            this.cd_playerGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.cd_playerGroupBox.TabIndex = 7;
-            this.cd_playerGroupBox.TabStop = false;
-            this.cd_playerGroupBox.Text = "Czy będzie używany odtwarzacz CD/DVD?";
+            this.size_of_laptopGroupBox.Controls.Add(this.tableLayoutPanel4);
+            this.size_of_laptopGroupBox.Location = new System.Drawing.Point(3, 138);
+            this.size_of_laptopGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.size_of_laptopGroupBox.Name = "size_of_laptopGroupBox";
+            this.size_of_laptopGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.size_of_laptopGroupBox.TabIndex = 2;
+            this.size_of_laptopGroupBox.TabStop = false;
+            this.size_of_laptopGroupBox.Text = "Jaka wielkość laptopa?";
             // 
-            // tableLayoutPanel9
+            // tableLayoutPanel4
             // 
-            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel9.ColumnCount = 4;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel9.Controls.Add(this.cd_playerPriority, 2, 0);
-            this.tableLayoutPanel9.Controls.Add(this.cd_playerSelect, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label17, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label18, 3, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 1;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel9.TabIndex = 0;
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel4.Controls.Add(this.size_of_laptopPriority, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.size_of_laptopSelect, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label7, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label8, 3, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // cd_playerPriority
+            // size_of_laptopPriority
             // 
-            this.cd_playerPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.size_of_laptopPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cd_playerPriority.AutoSize = false;
-            this.cd_playerPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.cd_playerPriority.LargeChange = 1;
-            this.cd_playerPriority.Location = new System.Drawing.Point(210, 6);
-            this.cd_playerPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.cd_playerPriority.Maximum = 3;
-            this.cd_playerPriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.cd_playerPriority.Minimum = 1;
-            this.cd_playerPriority.Name = "cd_playerPriority";
-            this.cd_playerPriority.Size = new System.Drawing.Size(94, 30);
-            this.cd_playerPriority.TabIndex = 16;
-            this.cd_playerPriority.Value = 3;
+            this.size_of_laptopPriority.AutoSize = false;
+            this.size_of_laptopPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.size_of_laptopPriority.LargeChange = 1;
+            this.size_of_laptopPriority.Location = new System.Drawing.Point(210, 6);
+            this.size_of_laptopPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.size_of_laptopPriority.Maximum = 3;
+            this.size_of_laptopPriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.size_of_laptopPriority.Minimum = 1;
+            this.size_of_laptopPriority.Name = "size_of_laptopPriority";
+            this.size_of_laptopPriority.Size = new System.Drawing.Size(94, 30);
+            this.size_of_laptopPriority.TabIndex = 6;
+            this.size_of_laptopPriority.Value = 3;
             // 
-            // cd_playerSelect
+            // size_of_laptopSelect
             // 
-            this.cd_playerSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cd_playerSelect.FormattingEnabled = true;
-            this.cd_playerSelect.Items.AddRange(new object[] {
-            "Tak",
-            "Nie"});
-            this.cd_playerSelect.Location = new System.Drawing.Point(20, 11);
-            this.cd_playerSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.cd_playerSelect.Name = "cd_playerSelect";
-            this.cd_playerSelect.Size = new System.Drawing.Size(124, 23);
-            this.cd_playerSelect.TabIndex = 15;
+            this.size_of_laptopSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.size_of_laptopSelect.FormattingEnabled = true;
+            this.size_of_laptopSelect.Items.AddRange(new object[] {
+            "Duży",
+            "Średni",
+            "Mały"});
+            this.size_of_laptopSelect.Location = new System.Drawing.Point(20, 10);
+            this.size_of_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.size_of_laptopSelect.Name = "size_of_laptopSelect";
+            this.size_of_laptopSelect.Size = new System.Drawing.Size(124, 23);
+            this.size_of_laptopSelect.TabIndex = 5;
             // 
-            // label17
+            // label7
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(164, 16);
-            this.label17.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(43, 15);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "MIN(1)";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(164, 16);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 15);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "MIN(1)";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label18
+            // label8
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(307, 16);
-            this.label18.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 15);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "MAX(3)";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // night_usageGroupBox
-            // 
-            this.night_usageGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.night_usageGroupBox.Controls.Add(this.tableLayoutPanel8);
-            this.night_usageGroupBox.Location = new System.Drawing.Point(3, 406);
-            this.night_usageGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.night_usageGroupBox.Name = "night_usageGroupBox";
-            this.night_usageGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.night_usageGroupBox.TabIndex = 6;
-            this.night_usageGroupBox.TabStop = false;
-            this.night_usageGroupBox.Text = "Jak często będzie używany w nocy?";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel8.ColumnCount = 4;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel8.Controls.Add(this.night_usagePriority, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.night_usageSelect, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label15, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label16, 3, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel8.TabIndex = 0;
-            // 
-            // night_usagePriority
-            // 
-            this.night_usagePriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.night_usagePriority.AutoSize = false;
-            this.night_usagePriority.BackColor = System.Drawing.SystemColors.Window;
-            this.night_usagePriority.LargeChange = 1;
-            this.night_usagePriority.Location = new System.Drawing.Point(210, 6);
-            this.night_usagePriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.night_usagePriority.Maximum = 3;
-            this.night_usagePriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.night_usagePriority.Minimum = 1;
-            this.night_usagePriority.Name = "night_usagePriority";
-            this.night_usagePriority.Size = new System.Drawing.Size(94, 30);
-            this.night_usagePriority.TabIndex = 14;
-            this.night_usagePriority.Value = 3;
-            // 
-            // night_usageSelect
-            // 
-            this.night_usageSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.night_usageSelect.FormattingEnabled = true;
-            this.night_usageSelect.Items.AddRange(new object[] {
-            "Często",
-            "Sporadycznie",
-            "Rzadko"});
-            this.night_usageSelect.Location = new System.Drawing.Point(20, 10);
-            this.night_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.night_usageSelect.Name = "night_usageSelect";
-            this.night_usageSelect.Size = new System.Drawing.Size(124, 23);
-            this.night_usageSelect.TabIndex = 13;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(164, 16);
-            this.label15.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 15);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "MIN(1)";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(307, 16);
-            this.label16.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 15);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "MAX(3)";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // laptop_durabilityGroupBox
-            // 
-            this.laptop_durabilityGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.laptop_durabilityGroupBox.Controls.Add(this.tableLayoutPanel7);
-            this.laptop_durabilityGroupBox.Location = new System.Drawing.Point(3, 339);
-            this.laptop_durabilityGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.laptop_durabilityGroupBox.Name = "laptop_durabilityGroupBox";
-            this.laptop_durabilityGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.laptop_durabilityGroupBox.TabIndex = 5;
-            this.laptop_durabilityGroupBox.TabStop = false;
-            this.laptop_durabilityGroupBox.Text = "Jak bardzo powinien być wytrzymały?";
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel7.ColumnCount = 4;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel7.Controls.Add(this.laptop_durabilityPriority, 2, 0);
-            this.tableLayoutPanel7.Controls.Add(this.laptop_durabilitySelect, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label13, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label14, 3, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel7.TabIndex = 0;
-            // 
-            // laptop_durabilityPriority
-            // 
-            this.laptop_durabilityPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.laptop_durabilityPriority.AutoSize = false;
-            this.laptop_durabilityPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.laptop_durabilityPriority.LargeChange = 1;
-            this.laptop_durabilityPriority.Location = new System.Drawing.Point(210, 6);
-            this.laptop_durabilityPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.laptop_durabilityPriority.Maximum = 3;
-            this.laptop_durabilityPriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.laptop_durabilityPriority.Minimum = 1;
-            this.laptop_durabilityPriority.Name = "laptop_durabilityPriority";
-            this.laptop_durabilityPriority.Size = new System.Drawing.Size(94, 30);
-            this.laptop_durabilityPriority.TabIndex = 12;
-            this.laptop_durabilityPriority.Value = 3;
-            // 
-            // laptop_durabilitySelect
-            // 
-            this.laptop_durabilitySelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.laptop_durabilitySelect.FormattingEnabled = true;
-            this.laptop_durabilitySelect.Items.AddRange(new object[] {
-            "Bardzo",
-            "Trochę",
-            "Nie Musi"});
-            this.laptop_durabilitySelect.Location = new System.Drawing.Point(20, 11);
-            this.laptop_durabilitySelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.laptop_durabilitySelect.Name = "laptop_durabilitySelect";
-            this.laptop_durabilitySelect.Size = new System.Drawing.Size(124, 23);
-            this.laptop_durabilitySelect.TabIndex = 11;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(164, 16);
-            this.label13.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 15);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "MIN(1)";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(307, 16);
-            this.label14.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 15);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "MAX(3)";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // laptop_battery_usageGroupBox
-            // 
-            this.laptop_battery_usageGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.laptop_battery_usageGroupBox.Controls.Add(this.tableLayoutPanel6);
-            this.laptop_battery_usageGroupBox.Location = new System.Drawing.Point(3, 272);
-            this.laptop_battery_usageGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.laptop_battery_usageGroupBox.Name = "laptop_battery_usageGroupBox";
-            this.laptop_battery_usageGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.laptop_battery_usageGroupBox.TabIndex = 4;
-            this.laptop_battery_usageGroupBox.TabStop = false;
-            this.laptop_battery_usageGroupBox.Text = "Jak często laptop znajdowałby z daleka od źródła zasilania?";
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel6.ColumnCount = 4;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel6.Controls.Add(this.laptop_battery_usagePriority, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.laptop_battery_usageSelect, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label11, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label12, 3, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // laptop_battery_usagePriority
-            // 
-            this.laptop_battery_usagePriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.laptop_battery_usagePriority.AutoSize = false;
-            this.laptop_battery_usagePriority.BackColor = System.Drawing.SystemColors.Window;
-            this.laptop_battery_usagePriority.LargeChange = 1;
-            this.laptop_battery_usagePriority.Location = new System.Drawing.Point(210, 6);
-            this.laptop_battery_usagePriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.laptop_battery_usagePriority.Maximum = 3;
-            this.laptop_battery_usagePriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.laptop_battery_usagePriority.Minimum = 1;
-            this.laptop_battery_usagePriority.Name = "laptop_battery_usagePriority";
-            this.laptop_battery_usagePriority.Size = new System.Drawing.Size(94, 30);
-            this.laptop_battery_usagePriority.TabIndex = 10;
-            this.laptop_battery_usagePriority.Value = 3;
-            // 
-            // laptop_battery_usageSelect
-            // 
-            this.laptop_battery_usageSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.laptop_battery_usageSelect.FormattingEnabled = true;
-            this.laptop_battery_usageSelect.Items.AddRange(new object[] {
-            "Często",
-            "Sporadycznie",
-            "Rzadko"});
-            this.laptop_battery_usageSelect.Location = new System.Drawing.Point(20, 10);
-            this.laptop_battery_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.laptop_battery_usageSelect.Name = "laptop_battery_usageSelect";
-            this.laptop_battery_usageSelect.Size = new System.Drawing.Size(124, 23);
-            this.laptop_battery_usageSelect.TabIndex = 9;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(164, 16);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 15);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "MIN(1)";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(307, 16);
-            this.label12.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 15);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "MAX(3)";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(307, 16);
+            this.label8.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 15);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "MAX(3)";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // laptop_usageGroupBox
             // 
@@ -869,272 +810,438 @@
             this.label10.Text = "MAX(3)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // size_of_laptopGroupBox
+            // max_priceGroupBox
             // 
-            this.size_of_laptopGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.max_priceGroupBox.Controls.Add(this.tableLayoutPanel10);
+            this.max_priceGroupBox.Location = new System.Drawing.Point(3, 540);
+            this.max_priceGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.max_priceGroupBox.Name = "max_priceGroupBox";
+            this.max_priceGroupBox.Size = new System.Drawing.Size(179, 61);
+            this.max_priceGroupBox.TabIndex = 8;
+            this.max_priceGroupBox.TabStop = false;
+            this.max_priceGroupBox.Text = "Za jaką minimalną kwotę?";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Controls.Add(this.min_price, 0, 0);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(179, 47);
+            this.tableLayoutPanel10.TabIndex = 0;
+            // 
+            // min_price
+            // 
+            this.min_price.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.min_price.Location = new System.Drawing.Point(20, 13);
+            this.min_price.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.min_price.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.min_price.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.min_price.Name = "min_price";
+            this.min_price.Size = new System.Drawing.Size(139, 21);
+            this.min_price.TabIndex = 17;
+            this.min_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.min_price.ThousandsSeparator = true;
+            this.min_price.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // laptop_battery_usageGroupBox
+            // 
+            this.laptop_battery_usageGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.size_of_laptopGroupBox.Controls.Add(this.tableLayoutPanel4);
-            this.size_of_laptopGroupBox.Location = new System.Drawing.Point(3, 138);
-            this.size_of_laptopGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.size_of_laptopGroupBox.Name = "size_of_laptopGroupBox";
-            this.size_of_laptopGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.size_of_laptopGroupBox.TabIndex = 2;
-            this.size_of_laptopGroupBox.TabStop = false;
-            this.size_of_laptopGroupBox.Text = "Jaka wielkość laptopa?";
+            this.laptop_battery_usageGroupBox.Controls.Add(this.tableLayoutPanel6);
+            this.laptop_battery_usageGroupBox.Location = new System.Drawing.Point(3, 272);
+            this.laptop_battery_usageGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.laptop_battery_usageGroupBox.Name = "laptop_battery_usageGroupBox";
+            this.laptop_battery_usageGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.laptop_battery_usageGroupBox.TabIndex = 4;
+            this.laptop_battery_usageGroupBox.TabStop = false;
+            this.laptop_battery_usageGroupBox.Text = "Jak często laptop znajdowałby z daleka od źródła zasilania?";
             // 
-            // tableLayoutPanel4
+            // tableLayoutPanel6
             // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel4.Controls.Add(this.size_of_laptopPriority, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.size_of_laptopSelect, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label7, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label8, 3, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel4.TabIndex = 0;
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel6.Controls.Add(this.laptop_battery_usagePriority, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.laptop_battery_usageSelect, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label11, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label12, 3, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
-            // size_of_laptopPriority
+            // laptop_battery_usagePriority
             // 
-            this.size_of_laptopPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.laptop_battery_usagePriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.size_of_laptopPriority.AutoSize = false;
-            this.size_of_laptopPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.size_of_laptopPriority.LargeChange = 1;
-            this.size_of_laptopPriority.Location = new System.Drawing.Point(210, 6);
-            this.size_of_laptopPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.size_of_laptopPriority.Maximum = 3;
-            this.size_of_laptopPriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.size_of_laptopPriority.Minimum = 1;
-            this.size_of_laptopPriority.Name = "size_of_laptopPriority";
-            this.size_of_laptopPriority.Size = new System.Drawing.Size(94, 30);
-            this.size_of_laptopPriority.TabIndex = 6;
-            this.size_of_laptopPriority.Value = 3;
+            this.laptop_battery_usagePriority.AutoSize = false;
+            this.laptop_battery_usagePriority.BackColor = System.Drawing.SystemColors.Window;
+            this.laptop_battery_usagePriority.LargeChange = 1;
+            this.laptop_battery_usagePriority.Location = new System.Drawing.Point(210, 6);
+            this.laptop_battery_usagePriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.laptop_battery_usagePriority.Maximum = 3;
+            this.laptop_battery_usagePriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.laptop_battery_usagePriority.Minimum = 1;
+            this.laptop_battery_usagePriority.Name = "laptop_battery_usagePriority";
+            this.laptop_battery_usagePriority.Size = new System.Drawing.Size(94, 30);
+            this.laptop_battery_usagePriority.TabIndex = 10;
+            this.laptop_battery_usagePriority.Value = 3;
             // 
-            // size_of_laptopSelect
+            // laptop_battery_usageSelect
             // 
-            this.size_of_laptopSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.size_of_laptopSelect.FormattingEnabled = true;
-            this.size_of_laptopSelect.Items.AddRange(new object[] {
-            "Duży",
-            "Średni",
-            "Mały"});
-            this.size_of_laptopSelect.Location = new System.Drawing.Point(20, 10);
-            this.size_of_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.size_of_laptopSelect.Name = "size_of_laptopSelect";
-            this.size_of_laptopSelect.Size = new System.Drawing.Size(124, 23);
-            this.size_of_laptopSelect.TabIndex = 5;
+            this.laptop_battery_usageSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.laptop_battery_usageSelect.FormattingEnabled = true;
+            this.laptop_battery_usageSelect.Items.AddRange(new object[] {
+            "Często",
+            "Sporadycznie",
+            "Rzadko"});
+            this.laptop_battery_usageSelect.Location = new System.Drawing.Point(20, 10);
+            this.laptop_battery_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.laptop_battery_usageSelect.Name = "laptop_battery_usageSelect";
+            this.laptop_battery_usageSelect.Size = new System.Drawing.Size(124, 23);
+            this.laptop_battery_usageSelect.TabIndex = 9;
             // 
-            // label7
+            // label11
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(164, 16);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "MIN(1)";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(164, 16);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 15);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "MIN(1)";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
+            // label12
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(307, 16);
-            this.label8.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 15);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "MAX(3)";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(307, 16);
+            this.label12.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 15);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "MAX(3)";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // preferred_laptopGroupBox
+            // cd_playerGroupBox
             // 
-            this.preferred_laptopGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cd_playerGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.preferred_laptopGroupBox.Controls.Add(this.tableLayoutPanel3);
-            this.preferred_laptopGroupBox.Location = new System.Drawing.Point(3, 71);
-            this.preferred_laptopGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.preferred_laptopGroupBox.Name = "preferred_laptopGroupBox";
-            this.preferred_laptopGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.preferred_laptopGroupBox.TabIndex = 1;
-            this.preferred_laptopGroupBox.TabStop = false;
-            this.preferred_laptopGroupBox.Text = "Preferowany wygląd laptopa?";
+            this.cd_playerGroupBox.Controls.Add(this.tableLayoutPanel9);
+            this.cd_playerGroupBox.Location = new System.Drawing.Point(3, 473);
+            this.cd_playerGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.cd_playerGroupBox.Name = "cd_playerGroupBox";
+            this.cd_playerGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.cd_playerGroupBox.TabIndex = 7;
+            this.cd_playerGroupBox.TabStop = false;
+            this.cd_playerGroupBox.Text = "Czy będzie używany odtwarzacz CD/DVD?";
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel9
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel3.Controls.Add(this.preferred_laptopPriority, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.preferred_laptopSelect, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 3, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel9.ColumnCount = 4;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel9.Controls.Add(this.cd_playerPriority, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.cd_playerSelect, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label17, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label18, 3, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel9.TabIndex = 0;
             // 
-            // preferred_laptopPriority
+            // cd_playerPriority
             // 
-            this.preferred_laptopPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cd_playerPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.preferred_laptopPriority.AutoSize = false;
-            this.preferred_laptopPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.preferred_laptopPriority.LargeChange = 1;
-            this.preferred_laptopPriority.Location = new System.Drawing.Point(210, 6);
-            this.preferred_laptopPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.preferred_laptopPriority.Maximum = 3;
-            this.preferred_laptopPriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.preferred_laptopPriority.Minimum = 1;
-            this.preferred_laptopPriority.Name = "preferred_laptopPriority";
-            this.preferred_laptopPriority.Size = new System.Drawing.Size(94, 30);
-            this.preferred_laptopPriority.TabIndex = 4;
-            this.preferred_laptopPriority.Value = 3;
+            this.cd_playerPriority.AutoSize = false;
+            this.cd_playerPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.cd_playerPriority.LargeChange = 1;
+            this.cd_playerPriority.Location = new System.Drawing.Point(210, 6);
+            this.cd_playerPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.cd_playerPriority.Maximum = 3;
+            this.cd_playerPriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.cd_playerPriority.Minimum = 1;
+            this.cd_playerPriority.Name = "cd_playerPriority";
+            this.cd_playerPriority.Size = new System.Drawing.Size(94, 30);
+            this.cd_playerPriority.TabIndex = 16;
+            this.cd_playerPriority.Value = 3;
             // 
-            // preferred_laptopSelect
+            // cd_playerSelect
             // 
-            this.preferred_laptopSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.preferred_laptopSelect.FormattingEnabled = true;
-            this.preferred_laptopSelect.Items.AddRange(new object[] {
-            "Ciemny",
-            "Jasny",
-            "Kolorowy"});
-            this.preferred_laptopSelect.Location = new System.Drawing.Point(20, 11);
-            this.preferred_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.preferred_laptopSelect.Name = "preferred_laptopSelect";
-            this.preferred_laptopSelect.Size = new System.Drawing.Size(124, 23);
-            this.preferred_laptopSelect.TabIndex = 3;
+            this.cd_playerSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cd_playerSelect.FormattingEnabled = true;
+            this.cd_playerSelect.Items.AddRange(new object[] {
+            "Tak",
+            "Nie"});
+            this.cd_playerSelect.Location = new System.Drawing.Point(20, 11);
+            this.cd_playerSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.cd_playerSelect.Name = "cd_playerSelect";
+            this.cd_playerSelect.Size = new System.Drawing.Size(124, 23);
+            this.cd_playerSelect.TabIndex = 15;
             // 
-            // label5
+            // label17
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(164, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "MIN(1)";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(164, 16);
+            this.label17.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(43, 15);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "MIN(1)";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // label18
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(307, 16);
-            this.label6.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "MAX(3)";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(307, 16);
+            this.label18.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 15);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "MAX(3)";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // how_many_dataGroupBox
+            // laptop_durabilityGroupBox
             // 
-            this.how_many_dataGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.laptop_durabilityGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.how_many_dataGroupBox.Controls.Add(this.tableLayoutPanel2);
-            this.how_many_dataGroupBox.Location = new System.Drawing.Point(3, 4);
-            this.how_many_dataGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
-            this.how_many_dataGroupBox.Name = "how_many_dataGroupBox";
-            this.how_many_dataGroupBox.Size = new System.Drawing.Size(364, 61);
-            this.how_many_dataGroupBox.TabIndex = 0;
-            this.how_many_dataGroupBox.TabStop = false;
-            this.how_many_dataGroupBox.Text = "Ile danych byłoby przechowywanych?";
+            this.laptop_durabilityGroupBox.Controls.Add(this.tableLayoutPanel7);
+            this.laptop_durabilityGroupBox.Location = new System.Drawing.Point(3, 339);
+            this.laptop_durabilityGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.laptop_durabilityGroupBox.Name = "laptop_durabilityGroupBox";
+            this.laptop_durabilityGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.laptop_durabilityGroupBox.TabIndex = 5;
+            this.laptop_durabilityGroupBox.TabStop = false;
+            this.laptop_durabilityGroupBox.Text = "Jak bardzo powinien być wytrzymały?";
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanel7
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel2.Controls.Add(this.how_many_dataPriority, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.how_many_dataSelect, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 3, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(364, 47);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel7.ColumnCount = 4;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel7.Controls.Add(this.laptop_durabilityPriority, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.laptop_durabilitySelect, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label13, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label14, 3, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // how_many_dataPriority
+            // laptop_durabilityPriority
             // 
-            this.how_many_dataPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.laptop_durabilityPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.how_many_dataPriority.AutoSize = false;
-            this.how_many_dataPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.how_many_dataPriority.LargeChange = 1;
-            this.how_many_dataPriority.Location = new System.Drawing.Point(210, 6);
-            this.how_many_dataPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.how_many_dataPriority.Maximum = 3;
-            this.how_many_dataPriority.MaximumSize = new System.Drawing.Size(250, 30);
-            this.how_many_dataPriority.Minimum = 1;
-            this.how_many_dataPriority.Name = "how_many_dataPriority";
-            this.how_many_dataPriority.Size = new System.Drawing.Size(94, 30);
-            this.how_many_dataPriority.TabIndex = 2;
-            this.how_many_dataPriority.Value = 3;
+            this.laptop_durabilityPriority.AutoSize = false;
+            this.laptop_durabilityPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.laptop_durabilityPriority.LargeChange = 1;
+            this.laptop_durabilityPriority.Location = new System.Drawing.Point(210, 6);
+            this.laptop_durabilityPriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.laptop_durabilityPriority.Maximum = 3;
+            this.laptop_durabilityPriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.laptop_durabilityPriority.Minimum = 1;
+            this.laptop_durabilityPriority.Name = "laptop_durabilityPriority";
+            this.laptop_durabilityPriority.Size = new System.Drawing.Size(94, 30);
+            this.laptop_durabilityPriority.TabIndex = 12;
+            this.laptop_durabilityPriority.Value = 3;
             // 
-            // how_many_dataSelect
+            // laptop_durabilitySelect
             // 
-            this.how_many_dataSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.how_many_dataSelect.FormattingEnabled = true;
-            this.how_many_dataSelect.Items.AddRange(new object[] {
-            "Bardzo Dużo",
-            "Dużo",
-            "Mało"});
-            this.how_many_dataSelect.Location = new System.Drawing.Point(20, 10);
-            this.how_many_dataSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
-            this.how_many_dataSelect.Name = "how_many_dataSelect";
-            this.how_many_dataSelect.Size = new System.Drawing.Size(124, 23);
-            this.how_many_dataSelect.TabIndex = 1;
+            this.laptop_durabilitySelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.laptop_durabilitySelect.FormattingEnabled = true;
+            this.laptop_durabilitySelect.Items.AddRange(new object[] {
+            "Bardzo",
+            "Trochę",
+            "Nie Musi"});
+            this.laptop_durabilitySelect.Location = new System.Drawing.Point(20, 11);
+            this.laptop_durabilitySelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.laptop_durabilitySelect.Name = "laptop_durabilitySelect";
+            this.laptop_durabilitySelect.Size = new System.Drawing.Size(124, 23);
+            this.laptop_durabilitySelect.TabIndex = 11;
             // 
-            // label3
+            // label13
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "MIN(1)";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(164, 16);
+            this.label13.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 15);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "MIN(1)";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // label14
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "MAX(3)";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(307, 16);
+            this.label14.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 15);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "MAX(3)";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // night_usageGroupBox
+            // 
+            this.night_usageGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.night_usageGroupBox.Controls.Add(this.tableLayoutPanel8);
+            this.night_usageGroupBox.Location = new System.Drawing.Point(3, 406);
+            this.night_usageGroupBox.MaximumSize = new System.Drawing.Size(560, 90);
+            this.night_usageGroupBox.Name = "night_usageGroupBox";
+            this.night_usageGroupBox.Size = new System.Drawing.Size(364, 61);
+            this.night_usageGroupBox.TabIndex = 6;
+            this.night_usageGroupBox.TabStop = false;
+            this.night_usageGroupBox.Text = "Jak często będzie używany w nocy?";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel8.ColumnCount = 4;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.Controls.Add(this.night_usagePriority, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.night_usageSelect, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label15, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label16, 3, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 14);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(364, 47);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
+            // night_usagePriority
+            // 
+            this.night_usagePriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.night_usagePriority.AutoSize = false;
+            this.night_usagePriority.BackColor = System.Drawing.SystemColors.Window;
+            this.night_usagePriority.LargeChange = 1;
+            this.night_usagePriority.Location = new System.Drawing.Point(210, 6);
+            this.night_usagePriority.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.night_usagePriority.Maximum = 3;
+            this.night_usagePriority.MaximumSize = new System.Drawing.Size(250, 30);
+            this.night_usagePriority.Minimum = 1;
+            this.night_usagePriority.Name = "night_usagePriority";
+            this.night_usagePriority.Size = new System.Drawing.Size(94, 30);
+            this.night_usagePriority.TabIndex = 14;
+            this.night_usagePriority.Value = 3;
+            // 
+            // night_usageSelect
+            // 
+            this.night_usageSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.night_usageSelect.FormattingEnabled = true;
+            this.night_usageSelect.Items.AddRange(new object[] {
+            "Często",
+            "Sporadycznie",
+            "Rzadko"});
+            this.night_usageSelect.Location = new System.Drawing.Point(20, 10);
+            this.night_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
+            this.night_usageSelect.Name = "night_usageSelect";
+            this.night_usageSelect.Size = new System.Drawing.Size(124, 23);
+            this.night_usageSelect.TabIndex = 13;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(164, 16);
+            this.label15.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 15);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "MIN(1)";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(307, 16);
+            this.label16.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 15);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "MAX(3)";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // resultGroupBox
+            // 
+            this.resultGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultGroupBox.Controls.Add(this.resultBox);
+            this.resultGroupBox.Location = new System.Drawing.Point(373, 4);
+            this.resultGroupBox.Name = "resultGroupBox";
+            this.resultGroupBox.Size = new System.Drawing.Size(440, 643);
+            this.resultGroupBox.TabIndex = 12;
+            this.resultGroupBox.TabStop = false;
+            this.resultGroupBox.Text = "Wyniki wyszukiwania";
+            // 
+            // resultBox
+            // 
+            this.resultBox.AutoScroll = true;
+            this.resultBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resultBox.Location = new System.Drawing.Point(3, 17);
+            this.resultBox.MinimumSize = new System.Drawing.Size(0, 620);
+            this.resultBox.Name = "resultBox";
+            this.resultBox.Size = new System.Drawing.Size(434, 623);
+            this.resultBox.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -1197,111 +1304,6 @@
             this.clearConsole.UseVisualStyleBackColor = true;
             this.clearConsole.Click += new System.EventHandler(this.clearConsole_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel13);
-            this.groupBox2.Location = new System.Drawing.Point(188, 540);
-            this.groupBox2.MaximumSize = new System.Drawing.Size(560, 90);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(179, 61);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Za jaką maksymalną kwotę?";
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel13.ColumnCount = 1;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.Controls.Add(this.max_price, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 14);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 1;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(179, 47);
-            this.tableLayoutPanel13.TabIndex = 0;
-            // 
-            // max_price
-            // 
-            this.max_price.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.max_price.Location = new System.Drawing.Point(20, 13);
-            this.max_price.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.max_price.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.max_price.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.max_price.Name = "max_price";
-            this.max_price.Size = new System.Drawing.Size(139, 21);
-            this.max_price.TabIndex = 18;
-            this.max_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.max_price.ThousandsSeparator = true;
-            this.max_price.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // startStopProgram
-            // 
-            this.startStopProgram.Location = new System.Drawing.Point(6, 614);
-            this.startStopProgram.Name = "startStopProgram";
-            this.startStopProgram.Size = new System.Drawing.Size(361, 30);
-            this.startStopProgram.TabIndex = 19;
-            this.startStopProgram.Text = "Start";
-            this.startStopProgram.UseVisualStyleBackColor = true;
-            this.startStopProgram.Click += new System.EventHandler(this.startStopProgram_Click);
-            // 
-            // resultGroupBox
-            // 
-            this.resultGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resultGroupBox.Controls.Add(this.resultBox);
-            this.resultGroupBox.Location = new System.Drawing.Point(373, 4);
-            this.resultGroupBox.Name = "resultGroupBox";
-            this.resultGroupBox.Size = new System.Drawing.Size(440, 643);
-            this.resultGroupBox.TabIndex = 12;
-            this.resultGroupBox.TabStop = false;
-            this.resultGroupBox.Text = "Wyniki wyszukiwania";
-            // 
-            // resultBox
-            // 
-            this.resultBox.AutoScroll = true;
-            this.resultBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultBox.Location = new System.Drawing.Point(3, 17);
-            this.resultBox.MinimumSize = new System.Drawing.Size(0, 620);
-            this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(434, 623);
-            this.resultBox.TabIndex = 0;
-            // 
-            // preferencesContainer
-            // 
-            this.preferencesContainer.Controls.Add(this.how_many_dataGroupBox);
-            this.preferencesContainer.Controls.Add(this.preferred_laptopGroupBox);
-            this.preferencesContainer.Controls.Add(this.groupBox2);
-            this.preferencesContainer.Controls.Add(this.size_of_laptopGroupBox);
-            this.preferencesContainer.Controls.Add(this.laptop_usageGroupBox);
-            this.preferencesContainer.Controls.Add(this.max_priceGroupBox);
-            this.preferencesContainer.Controls.Add(this.laptop_battery_usageGroupBox);
-            this.preferencesContainer.Controls.Add(this.cd_playerGroupBox);
-            this.preferencesContainer.Controls.Add(this.laptop_durabilityGroupBox);
-            this.preferencesContainer.Controls.Add(this.night_usageGroupBox);
-            this.preferencesContainer.Location = new System.Drawing.Point(0, 0);
-            this.preferencesContainer.Name = "preferencesContainer";
-            this.preferencesContainer.Size = new System.Drawing.Size(371, 604);
-            this.preferencesContainer.TabIndex = 20;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1326,49 +1328,49 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerAgentsNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellerAgentsNumber)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.max_priceGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.min_price)).EndInit();
-            this.cd_playerGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cd_playerPriority)).EndInit();
-            this.night_usageGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.night_usagePriority)).EndInit();
-            this.laptop_durabilityGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laptop_durabilityPriority)).EndInit();
-            this.laptop_battery_usageGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laptop_battery_usagePriority)).EndInit();
-            this.laptop_usageGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laptop_usagePriority)).EndInit();
-            this.size_of_laptopGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.size_of_laptopPriority)).EndInit();
-            this.preferred_laptopGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.preferred_laptopPriority)).EndInit();
+            this.preferencesContainer.ResumeLayout(false);
             this.how_many_dataGroupBox.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.how_many_dataPriority)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
+            this.preferred_laptopGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.preferred_laptopPriority)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.max_price)).EndInit();
+            this.size_of_laptopGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.size_of_laptopPriority)).EndInit();
+            this.laptop_usageGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptop_usagePriority)).EndInit();
+            this.max_priceGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.min_price)).EndInit();
+            this.laptop_battery_usageGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptop_battery_usagePriority)).EndInit();
+            this.cd_playerGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cd_playerPriority)).EndInit();
+            this.laptop_durabilityGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptop_durabilityPriority)).EndInit();
+            this.night_usageGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.night_usagePriority)).EndInit();
             this.resultGroupBox.ResumeLayout(false);
-            this.preferencesContainer.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
