@@ -19,6 +19,7 @@ namespace Multi_AgentSystem_LaptopChoices
         bool stopTasks = false;
 
         string connectionStringSeller = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_seller;";
+        string connectionStringCustomer = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_customer;";
 
         List<Task> customerAgentsTab = new List<Task>();
         List<AgentTask> sellerAgentsTab = new List<AgentTask>();
@@ -160,7 +161,7 @@ namespace Multi_AgentSystem_LaptopChoices
 
                 for (int i = 1; i <= customerAgentsNumber.Value; i++)
                 {
-                    CustomerAgent temp = new CustomerAgent(i, Decimal.ToInt32(maxLapsNumber.Value), resultBox, outConsole);
+                    CustomerAgent temp = new CustomerAgent(i, Decimal.ToInt32(maxLapsNumber.Value), outConsole);
 
                     customerAgentsTab.Add(Task.Run(() => temp.RunAgent(ref stopTasks, ref sellerAgentsTab, ref customersProducts, ref parameters, ref priority, ref maxPrice, ref minPrice)));
                 }
@@ -177,7 +178,9 @@ namespace Multi_AgentSystem_LaptopChoices
         private void SelectProduct(object sender, EventArgs e)
         {
             //Here select product
-            string agentID = (sender as Button).Name.Substring(11);
+            int agentID = int.Parse((sender as Button).Name.Substring(11));
+            output("Wybrano przedmiot klienta nr " + agentID, Color.Green);
+            resultBox.Controls.Clear();
         }
 
         public void ShowItems()
@@ -186,7 +189,7 @@ namespace Multi_AgentSystem_LaptopChoices
             {
                 for (int j = 0; j < customersProducts.Count; j++)
                 {
-                    if(i != j && int.Parse(customersProducts[i][1]) >= int.Parse(customersProducts[j][i]) && customersProducts[i][2] == customersProducts[j][2] && customersProducts[i][3] == customersProducts[j][3])
+                    if(i != j && int.Parse(customersProducts[i][1]) >= int.Parse(customersProducts[j][1]) && customersProducts[i][2] == customersProducts[j][2] && customersProducts[i][3] == customersProducts[j][3])
                     {
                         output("Znaleziono takie same produkty u agentów, więc usuwam droższe", Color.Red);
                         customersProducts.RemoveAt(i);
@@ -261,7 +264,43 @@ namespace Multi_AgentSystem_LaptopChoices
 
         private void clearCustomersDatabaseButton_Click(object sender, EventArgs e)
         {
-            //cos tutaj
+            string query = "SHOW TABLES LIKE 'agent_%';";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionStringCustomer);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                query = "";
+                databaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    query = "DROP TABLE IF EXISTS";
+                    while (reader.Read())
+                    {
+                        query += " " + reader.GetString(0) + ",";
+                    }
+                    query = query.Remove(query.Length - 1, 1) + ";";
+                }
+                databaseConnection.Close();
+
+                if (query.Length > 0)
+                {
+                    commandDatabase = new MySqlCommand(query, databaseConnection);
+                    commandDatabase.CommandTimeout = 60;
+                    databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    databaseConnection.Close();
+                    output("Zresetowano bazy danych klientów", Color.Red);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void clearSellersDatabaseButton_Click(object sender, EventArgs e)

@@ -13,7 +13,6 @@ namespace Multi_AgentSystem_LaptopChoices
     {
         private int agentID;
         private int maxLaps;
-        private Panel resultBox;
         private RichTextBox console;
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=agents_customer;";
 
@@ -21,11 +20,10 @@ namespace Multi_AgentSystem_LaptopChoices
         private string name;
         private string link;
 
-        public CustomerAgent(int id, int maxLaps, Panel instance, RichTextBox writeConsole)
+        public CustomerAgent(int id, int maxLaps, RichTextBox writeConsole)
         {
             this.agentID = id;
             this.maxLaps = maxLaps;
-            this.resultBox = instance;
             this.console = writeConsole;
         }
 
