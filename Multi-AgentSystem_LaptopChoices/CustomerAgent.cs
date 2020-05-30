@@ -29,7 +29,7 @@ namespace Multi_AgentSystem_LaptopChoices
             this.console = writeConsole;
         }
 
-        public void RunAgent(ref bool stopAgent, ref List<AgentTask> sellerAgentsTab, ref int[] parameters, ref int[] priority, ref int maxPrice, ref int minPrice)
+        public void RunAgent(ref bool stopAgent, ref List<AgentTask> sellerAgentsTab, ref List<string[]> customersProducts, ref int[] parameters, ref int[] priority, ref int maxPrice, ref int minPrice)
         {
             output("Klient nr " + agentID + ": Startuje...", Color.Blue);
 
@@ -60,7 +60,7 @@ namespace Multi_AgentSystem_LaptopChoices
                             if (res[0] != "-1")
                             {
                                 price = Int32.Parse(res[2]);
-                                output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł przedmiot w cenie " + price + " zł", Color.OrangeRed);
+                                output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł pasujący przedmiot w cenie " + price + " zł", Color.OrangeRed);
 
                                 if (price > minPrice && price < maxPrice)
                                 {
@@ -95,7 +95,8 @@ namespace Multi_AgentSystem_LaptopChoices
 
             if (haveItem)
             {
-                ShowItem();
+                output("Klient nr " + agentID + ": Wróciłem z przedmiotem", Color.Purple);
+                customersProducts.Add(new string[] { agentID.ToString(), price.ToString(), name, link });
             }
             else
             {
@@ -116,67 +117,6 @@ namespace Multi_AgentSystem_LaptopChoices
                 console.SelectionStart = console.Text.Length;
                 console.ScrollToCaret();
             });
-        }
-
-        private void OpenLink(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
-        }
-
-        private void SelectProduct(object sender, EventArgs e)
-        {
-            //Here select product
-        }
-
-        public void ShowItem()
-        {
-            GroupBox box = new GroupBox();
-            box.Dock = DockStyle.Top;
-            box.Text = "Produkt agenta nr " + agentID;
-            box.Name = "groupBoxAgent" + agentID;
-            box.Height = 120;
-
-            Label mylab = new Label();
-            mylab.Text = ("Model: " + name);
-            mylab.Dock = DockStyle.Top;
-            mylab.Font = new Font("Calibri", 12);
-            mylab.ForeColor = Color.Green;
-
-            Label mylab1 = new Label();
-            mylab1.Text = ("Cena: " + price + " zł");
-            mylab1.Dock = DockStyle.Top;
-            mylab1.Font = new Font("Calibri", 12);
-            mylab1.ForeColor = Color.Green;
-
-            LinkLabel dynamicLinkLabel = new LinkLabel();
-            dynamicLinkLabel.ForeColor = Color.Black;
-            dynamicLinkLabel.ActiveLinkColor = Color.Black;
-            dynamicLinkLabel.VisitedLinkColor = Color.Black;
-            dynamicLinkLabel.LinkColor = Color.Black;
-            dynamicLinkLabel.DisabledLinkColor = Color.Black;
-            dynamicLinkLabel.Text = "Link do sklepu";
-            dynamicLinkLabel.Name = "linkAgent" + agentID;
-            dynamicLinkLabel.Font = new Font("Calibri", 12);
-            dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, link);
-            dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(OpenLink);
-            dynamicLinkLabel.Dock = DockStyle.Top;
-
-            Button dynamicButton = new Button();
-            dynamicButton.Height = 30;
-            dynamicButton.Text = "Wybierz tę ofertę klienta nr " + agentID;
-            dynamicButton.Name = "buttonAgent" + agentID;
-            dynamicButton.Font = new Font("Calibri", 12);
-            dynamicButton.Click += new EventHandler(SelectProduct);
-            dynamicButton.Dock = DockStyle.Top;
-
-            box.Controls.Add(dynamicButton);
-            box.Controls.Add(dynamicLinkLabel);
-            box.Controls.Add(mylab1);
-            box.Controls.Add(mylab);
-
-            resultBox.Invoke((MethodInvoker)delegate { resultBox.Controls.Add(box); });
-
-            output("Klient nr " + agentID + ": Wróciłem z przedmiotem", Color.Purple);
         }
     }
 }

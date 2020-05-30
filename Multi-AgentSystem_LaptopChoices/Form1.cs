@@ -23,6 +23,8 @@ namespace Multi_AgentSystem_LaptopChoices
         List<Task> customerAgentsTab = new List<Task>();
         List<AgentTask> sellerAgentsTab = new List<AgentTask>();
 
+        List<string[]> customersProducts = new List<string[]>(); //(4) [0] - customer id, [1] - price, [2] - name, [3] - product link;
+
         int[] parameters = new int[8];
         int[] priority = new int[8];
         int minPrice, maxPrice;
@@ -107,6 +109,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 startStopProgram.Text = "Start";
                 preferencesContainer.Enabled = true;
                 stopTasks = true;
+                ShowItems();
             }
             else
             {
@@ -116,6 +119,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 customerAgentsTab.Clear();
                 sellerAgentsTab.Clear();
                 resultBox.Controls.Clear();
+                customersProducts.Clear();
 
                 preferencesContainer.Enabled = false;
                 programRunning = true;
@@ -158,10 +162,85 @@ namespace Multi_AgentSystem_LaptopChoices
                 {
                     CustomerAgent temp = new CustomerAgent(i, Decimal.ToInt32(maxLapsNumber.Value), resultBox, outConsole);
 
-                    customerAgentsTab.Add(Task.Run(() => temp.RunAgent(ref stopTasks, ref sellerAgentsTab, ref parameters, ref priority, ref maxPrice, ref minPrice)));
+                    customerAgentsTab.Add(Task.Run(() => temp.RunAgent(ref stopTasks, ref sellerAgentsTab, ref customersProducts, ref parameters, ref priority, ref maxPrice, ref minPrice)));
                 }
 
                 CustomersFinished();
+            }
+        }
+
+        private void OpenLink(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+        }
+
+        private void SelectProduct(object sender, EventArgs e)
+        {
+            //Here select product
+            string agentID = (sender as Button).Name.Substring(11);
+        }
+
+        public void ShowItems()
+        {
+            for (int i = customersProducts.Count - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < customersProducts.Count; j++)
+                {
+                    if(i != j && int.Parse(customersProducts[i][1]) >= int.Parse(customersProducts[j][i]) && customersProducts[i][2] == customersProducts[j][2] && customersProducts[i][3] == customersProducts[j][3])
+                    {
+                        output("Znaleziono takie same produkty u agentów, więc usuwam droższe", Color.Red);
+                        customersProducts.RemoveAt(i);
+                    }
+                }
+            }
+
+            foreach (string[] product in customersProducts)
+            {
+                GroupBox box = new GroupBox();
+                box.Dock = DockStyle.Top;
+                box.Text = "Produkt agenta nr " + product[0];
+                box.Name = "groupBoxAgent" + product[0];
+                box.Height = 120;
+
+                Label mylab = new Label();
+                mylab.Text = ("Model: " + product[2]);
+                mylab.Dock = DockStyle.Top;
+                mylab.Font = new Font("Calibri", 12);
+                mylab.ForeColor = Color.Green;
+
+                Label mylab1 = new Label();
+                mylab1.Text = ("Cena: " + product[1] + " zł");
+                mylab1.Dock = DockStyle.Top;
+                mylab1.Font = new Font("Calibri", 12);
+                mylab1.ForeColor = Color.Green;
+
+                LinkLabel dynamicLinkLabel = new LinkLabel();
+                dynamicLinkLabel.ForeColor = Color.Black;
+                dynamicLinkLabel.ActiveLinkColor = Color.Black;
+                dynamicLinkLabel.VisitedLinkColor = Color.Black;
+                dynamicLinkLabel.LinkColor = Color.Black;
+                dynamicLinkLabel.DisabledLinkColor = Color.Black;
+                dynamicLinkLabel.Text = "Link do sklepu";
+                dynamicLinkLabel.Name = "linkAgent" + product[0];
+                dynamicLinkLabel.Font = new Font("Calibri", 12);
+                dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, product[3]);
+                dynamicLinkLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(OpenLink);
+                dynamicLinkLabel.Dock = DockStyle.Top;
+
+                Button dynamicButton = new Button();
+                dynamicButton.Height = 30;
+                dynamicButton.Text = "Wybierz tę ofertę klienta nr " + product[0];
+                dynamicButton.Name = "buttonAgent" + product[0];
+                dynamicButton.Font = new Font("Calibri", 12);
+                dynamicButton.Click += new EventHandler(SelectProduct);
+                dynamicButton.Dock = DockStyle.Top;
+
+                box.Controls.Add(dynamicButton);
+                box.Controls.Add(dynamicLinkLabel);
+                box.Controls.Add(mylab1);
+                box.Controls.Add(mylab);
+
+                resultBox.Controls.Add(box);
             }
         }
 

@@ -131,7 +131,6 @@ namespace Multi_AgentSystem_LaptopChoices
 
                     Console.WriteLine(query);
                     response.Clear();
-                    //query = "SELECT * FROM itemsspecification WHERE id=999";
 
                     List<string[]> foundProducts = new List<string[]>();
 
@@ -173,13 +172,13 @@ namespace Multi_AgentSystem_LaptopChoices
                         {
                             output("Sprzedawca nr " + agentID + ": Klient wybrał przedmiot, sprzedaję...", Color.Blue);
                             //Change in database amount of items
-                            query = "UPDATE agent_" + agentID + "_productstable SET amount=" + (int.Parse(foundProducts[selectedID][2]) - 1) + " WHERE id_items = " + foundProducts[selectedID][0];
+                            /*query = "UPDATE agent_" + agentID + "_productstable SET amount=" + (int.Parse(foundProducts[selectedID][2]) - 1) + " WHERE id_items = " + foundProducts[selectedID][0];
                             Console.WriteLine(query);
                             commandDatabase = new MySqlCommand(query, databaseConnection);
                             commandDatabase.CommandTimeout = 60;
                             databaseConnection.Open();
                             reader = commandDatabase.ExecuteReader();
-                            databaseConnection.Close();
+                            databaseConnection.Close();*/
 
                             output("Sprzedawca nr " + agentID + ": Zaktualizowano ilość produktów", Color.Blue);
                         }
