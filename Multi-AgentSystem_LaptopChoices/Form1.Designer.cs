@@ -447,7 +447,7 @@
             this.how_many_dataPriority.Name = "how_many_dataPriority";
             this.how_many_dataPriority.Size = new System.Drawing.Size(94, 30);
             this.how_many_dataPriority.TabIndex = 2;
-            this.how_many_dataPriority.Value = 3;
+            this.how_many_dataPriority.Value = 1;
             // 
             // how_many_dataSelect
             // 
@@ -457,7 +457,7 @@
             "Bardzo Dużo",
             "Dużo",
             "Mało"});
-            this.how_many_dataSelect.Location = new System.Drawing.Point(20, 11);
+            this.how_many_dataSelect.Location = new System.Drawing.Point(20, 10);
             this.how_many_dataSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.how_many_dataSelect.Name = "how_many_dataSelect";
             this.how_many_dataSelect.Size = new System.Drawing.Size(124, 23);
@@ -536,7 +536,7 @@
             this.preferred_laptopPriority.Name = "preferred_laptopPriority";
             this.preferred_laptopPriority.Size = new System.Drawing.Size(94, 30);
             this.preferred_laptopPriority.TabIndex = 4;
-            this.preferred_laptopPriority.Value = 3;
+            this.preferred_laptopPriority.Value = 1;
             // 
             // preferred_laptopSelect
             // 
@@ -546,7 +546,7 @@
             "Ciemny",
             "Jasny",
             "Kolorowy"});
-            this.preferred_laptopSelect.Location = new System.Drawing.Point(20, 10);
+            this.preferred_laptopSelect.Location = new System.Drawing.Point(20, 11);
             this.preferred_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.preferred_laptopSelect.Name = "preferred_laptopSelect";
             this.preferred_laptopSelect.Size = new System.Drawing.Size(124, 23);
@@ -680,7 +680,7 @@
             this.size_of_laptopPriority.Name = "size_of_laptopPriority";
             this.size_of_laptopPriority.Size = new System.Drawing.Size(94, 30);
             this.size_of_laptopPriority.TabIndex = 6;
-            this.size_of_laptopPriority.Value = 3;
+            this.size_of_laptopPriority.Value = 1;
             // 
             // size_of_laptopSelect
             // 
@@ -690,7 +690,7 @@
             "Duży",
             "Średni",
             "Mały"});
-            this.size_of_laptopSelect.Location = new System.Drawing.Point(20, 11);
+            this.size_of_laptopSelect.Location = new System.Drawing.Point(20, 10);
             this.size_of_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.size_of_laptopSelect.Name = "size_of_laptopSelect";
             this.size_of_laptopSelect.Size = new System.Drawing.Size(124, 23);
@@ -769,7 +769,7 @@
             this.laptop_usagePriority.Name = "laptop_usagePriority";
             this.laptop_usagePriority.Size = new System.Drawing.Size(94, 30);
             this.laptop_usagePriority.TabIndex = 8;
-            this.laptop_usagePriority.Value = 3;
+            this.laptop_usagePriority.Value = 1;
             // 
             // laptop_usageSelect
             // 
@@ -780,7 +780,7 @@
             "Granie w Gry",
             "Multimedia i Przeglądanie Internetu",
             "Prace Graficzne"});
-            this.laptop_usageSelect.Location = new System.Drawing.Point(20, 10);
+            this.laptop_usageSelect.Location = new System.Drawing.Point(20, 11);
             this.laptop_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.laptop_usageSelect.Name = "laptop_usageSelect";
             this.laptop_usageSelect.Size = new System.Drawing.Size(124, 23);
@@ -914,7 +914,7 @@
             this.laptop_battery_usagePriority.Name = "laptop_battery_usagePriority";
             this.laptop_battery_usagePriority.Size = new System.Drawing.Size(94, 30);
             this.laptop_battery_usagePriority.TabIndex = 10;
-            this.laptop_battery_usagePriority.Value = 3;
+            this.laptop_battery_usagePriority.Value = 1;
             // 
             // laptop_battery_usageSelect
             // 
@@ -924,7 +924,7 @@
             "Często",
             "Sporadycznie",
             "Rzadko"});
-            this.laptop_battery_usageSelect.Location = new System.Drawing.Point(20, 11);
+            this.laptop_battery_usageSelect.Location = new System.Drawing.Point(20, 10);
             this.laptop_battery_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.laptop_battery_usageSelect.Name = "laptop_battery_usageSelect";
             this.laptop_battery_usageSelect.Size = new System.Drawing.Size(124, 23);
@@ -1003,7 +1003,7 @@
             this.cd_playerPriority.Name = "cd_playerPriority";
             this.cd_playerPriority.Size = new System.Drawing.Size(94, 30);
             this.cd_playerPriority.TabIndex = 16;
-            this.cd_playerPriority.Value = 3;
+            this.cd_playerPriority.Value = 1;
             // 
             // cd_playerSelect
             // 
@@ -1012,7 +1012,7 @@
             this.cd_playerSelect.Items.AddRange(new object[] {
             "Tak",
             "Nie"});
-            this.cd_playerSelect.Location = new System.Drawing.Point(20, 10);
+            this.cd_playerSelect.Location = new System.Drawing.Point(20, 11);
             this.cd_playerSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.cd_playerSelect.Name = "cd_playerSelect";
             this.cd_playerSelect.Size = new System.Drawing.Size(124, 23);
@@ -1091,7 +1091,7 @@
             this.laptop_durabilityPriority.Name = "laptop_durabilityPriority";
             this.laptop_durabilityPriority.Size = new System.Drawing.Size(94, 30);
             this.laptop_durabilityPriority.TabIndex = 12;
-            this.laptop_durabilityPriority.Value = 3;
+            this.laptop_durabilityPriority.Value = 1;
             // 
             // laptop_durabilitySelect
             // 
@@ -1101,7 +1101,7 @@
             "Bardzo",
             "Trochę",
             "Nie Musi"});
-            this.laptop_durabilitySelect.Location = new System.Drawing.Point(20, 10);
+            this.laptop_durabilitySelect.Location = new System.Drawing.Point(20, 11);
             this.laptop_durabilitySelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.laptop_durabilitySelect.Name = "laptop_durabilitySelect";
             this.laptop_durabilitySelect.Size = new System.Drawing.Size(124, 23);
@@ -1180,7 +1180,7 @@
             this.night_usagePriority.Name = "night_usagePriority";
             this.night_usagePriority.Size = new System.Drawing.Size(94, 30);
             this.night_usagePriority.TabIndex = 14;
-            this.night_usagePriority.Value = 3;
+            this.night_usagePriority.Value = 1;
             // 
             // night_usageSelect
             // 
@@ -1190,7 +1190,7 @@
             "Często",
             "Sporadycznie",
             "Rzadko"});
-            this.night_usageSelect.Location = new System.Drawing.Point(20, 11);
+            this.night_usageSelect.Location = new System.Drawing.Point(20, 10);
             this.night_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.night_usageSelect.Name = "night_usageSelect";
             this.night_usageSelect.Size = new System.Drawing.Size(124, 23);

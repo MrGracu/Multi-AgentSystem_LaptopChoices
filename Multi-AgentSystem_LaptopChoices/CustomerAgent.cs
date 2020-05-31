@@ -49,38 +49,97 @@ namespace Multi_AgentSystem_LaptopChoices
                         {
                             if (stopAgent) return;
 
+                            /* WAIT FOR RESPONSE THAT SELLER HAVE PRODUCT */
                             while (seller.response.Count == 0)
                             {
                                 if (stopAgent) return;
                             }
 
+                            while (seller.response[0] == null) { }
                             string[] res = (string[])seller.response[0];
                             if (res[0] != "-1")
                             {
-                                price = Int32.Parse(res[2]);
-                                output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł pasujący przedmiot w cenie " + price + " zł", Color.OrangeRed);
+                                /* SELLER HAVE PRODUCT - CHECK DO THE PRODUCT MEET THE REQUIREMENTS */
+                                bool goodPriority = false;
+                                if (int.Parse(res[4]) >= priority[0] && int.Parse(res[5]) >= priority[1] && int.Parse(res[6]) >= priority[2] && int.Parse(res[7]) >= priority[3] &&
+                                   int.Parse(res[8]) >= priority[4] && int.Parse(res[9]) >= priority[5] && int.Parse(res[10]) >= priority[6] && int.Parse(res[11]) >= priority[7]) goodPriority = true;
 
-                                if (price > minPrice && price < maxPrice)
+                                if(goodPriority)
                                 {
-                                    output("Klient nr " + agentID + ": Przedmiot został wybrany", Color.OrangeRed);
-                                    name = res[0];
-                                    link = res[3];
-                                    haveItem = true;
-                                    endOfConversation = true;
+                                    seller.response.Clear();
                                     seller.recieve.Add(true);
+                                    
+                                    while (seller.response.Count == 0) //Wait for response that seller recieved customer response
+                                    {
+                                        if (stopAgent) return;
+                                    }
+                                    
+                                    /* PRODUCT MEET THE REQUIREMENTS - NEGOTIATE THE PRICE */
+                                    price = Int32.Parse(res[2]);
+                                    output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł pasujący przedmiot w cenie " + price + " zł, rozpoczynam negocjacje od najniższej (" + minPrice + " zł)", Color.OrangeRed);
+
+                                    price = minPrice;
+                                    bool priceAccepted = false;
+                                    do
+                                    {
+                                        seller.response.Clear();
+                                        seller.recieve.Add(price);
+                                        while (seller.response.Count == 0) //Wait for response did price is accepted
+                                        {
+                                            if (stopAgent) return;
+                                        }
+
+                                        if (price != 0)
+                                        {
+                                            while (seller.response[0] == null) { }
+                                            priceAccepted = (bool)seller.response[0];
+
+                                            if (!priceAccepted)
+                                            {
+                                                ++price;
+                                                if (price > maxPrice)
+                                                {
+                                                    price = 0;
+                                                    output("Klient nr " + agentID + ": Przerywam negocjacje, ponieważ cena była by większa od maksymalnej", Color.OrangeRed);
+                                                }
+                                                //else output("Klient nr " + agentID + ": Poprzednia propozycja została odrzucona, więc oferuję sprzedawcy cenę " + price + " zł", Color.OrangeRed);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            price = -1;
+                                            priceAccepted = false;
+                                        }
+                                    } while (!priceAccepted && price != -1);
+
+                                    seller.response.Clear();
+                                    if (priceAccepted)//if (price > minPrice && price < maxPrice)
+                                    {
+                                        output("Klient nr " + agentID + ": Przedmiot został wybrany i wynegocjowany na " + price + " zł", Color.OrangeRed);
+                                        name = res[0];
+                                        link = res[3];
+                                        haveItem = true;
+                                        endOfConversation = true;
+                                        seller.recieve.Add(true);
+                                    }
+                                    else
+                                    {
+                                        output("Klient nr " + agentID + ": Negocjacje ceny się nie powiodły, czekam na inne propozycje", Color.OrangeRed);
+                                        seller.recieve.Add(false);
+                                    }
                                 }
                                 else
                                 {
-                                    output("Klient nr " + agentID + ": Przedmiot nie mieścił sie w cenie, czekam na inne propozycje", Color.OrangeRed);
+                                    output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł pasujący przedmiot, ale nie spełniał on wymagań priorytetów, więc czekam na inne propozycje", Color.OrangeRed);
                                     seller.recieve.Add(false);
+                                    seller.response.Clear();
                                 }
-                                seller.response.Clear();
                             }
                             else
                             {
                                 output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " nie spełnił wymagań, opuszczam", Color.OrangeRed);
-                                endOfConversation = true;
                                 seller.response.Clear();
+                                endOfConversation = true;
                             }
                         } while (!endOfConversation);
 

@@ -12,6 +12,7 @@ namespace Multi_AgentSystem_LaptopChoices
         public List<object> response;
         public List<object> recieve;
         public int id;
+        public bool isBusy;
 
         public void SetAgentTask(ref Task task)
         {
@@ -23,12 +24,13 @@ namespace Multi_AgentSystem_LaptopChoices
         public bool IsBusy(ref int[] parameters)
         {
             bool busy = false;
-            if (response.Count > 0 || recieve.Count > 0)
+            if (isBusy)
             {
                 busy = true;
             }
             else
             {
+                isBusy = true;
                 recieve.Add(parameters);
             }
             return busy;

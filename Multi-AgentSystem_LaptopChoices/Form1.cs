@@ -149,9 +149,9 @@ namespace Multi_AgentSystem_LaptopChoices
                 
                 for (int i = 1; i <= sellerAgentsNumber.Value; i++)
                 {
-                    SellerAgent temp = new SellerAgent(i, outConsole, ref random);
                     AgentTask agentTask = new AgentTask();
-                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response));
+                    SellerAgent temp = new SellerAgent(i, outConsole, ref random);
+                    Task tempTask = Task.Run(() => temp.RunAgent(ref stopTasks, ref agentTask.recieve, ref agentTask.response, ref agentTask.isBusy));
 
                     agentTask.SetAgentTask(ref tempTask);
                     agentTask.id = i;
@@ -177,7 +177,6 @@ namespace Multi_AgentSystem_LaptopChoices
 
         private void SelectProduct(object sender, EventArgs e)
         {
-            //Here select product
             int agentID = int.Parse((sender as Button).Name.Substring(11));
             output("Wybrano przedmiot klienta nr " + agentID, Color.Green);
             resultBox.Controls.Clear();
@@ -185,16 +184,25 @@ namespace Multi_AgentSystem_LaptopChoices
 
         public void ShowItems()
         {
-            for (int i = customersProducts.Count - 1; i >= 0; i--)
+            int i = 0;
+            while (i < customersProducts.Count)
             {
-                for (int j = 0; j < customersProducts.Count; j++)
+                for (int j = i+1; j < customersProducts.Count; j++)
                 {
-                    if(i != j && int.Parse(customersProducts[i][1]) >= int.Parse(customersProducts[j][1]) && customersProducts[i][2] == customersProducts[j][2] && customersProducts[i][3] == customersProducts[j][3])
+                    if (i != j && customersProducts[i][2] == customersProducts[j][2] && customersProducts[i][3] == customersProducts[j][3])
                     {
-                        output("Znaleziono takie same produkty u agentów, więc usuwam droższe", Color.Red);
-                        customersProducts.RemoveAt(i);
+                        output("Znaleziono takie same produkty wśród agentów, usuwam droższe", Color.Red);
+                        if(int.Parse(customersProducts[i][1]) > int.Parse(customersProducts[j][1]))
+                        {
+                            string[] temp = customersProducts[i];
+                            customersProducts[i] = customersProducts[j];
+                            customersProducts[j] = temp;
+                        }
+                        customersProducts.RemoveAt(j);
+                        --j;
                     }
                 }
+                ++i;
             }
 
             foreach (string[] product in customersProducts)
