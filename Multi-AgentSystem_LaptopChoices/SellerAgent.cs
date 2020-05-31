@@ -130,12 +130,10 @@ namespace Multi_AgentSystem_LaptopChoices
                         }
                         else
                         {
-                            query += ") AND itemsspecification.priority >= '1' AND amount > 0 GROUP BY itemsspecification.id_items HAVING colsAmout = " + parameters.Length;
+                            query += ") AND itemsspecification.priority >= '1' AND amount > 0 GROUP BY itemsspecification.id_items HAVING colsAmout = " + parameters.Length + " ORDER BY amount DESC"; // " ORDER BY points DESC";
                             specificationQuery += ") ";
                         }
                     }
-
-                    //query += " ORDER BY points DESC;";
 
                     Console.WriteLine(query);
                     response.Clear();

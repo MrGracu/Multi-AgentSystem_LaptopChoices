@@ -25,6 +25,38 @@ namespace Multi_AgentSystem_LaptopChoices
             this.agentID = id;
             this.maxLaps = maxLaps;
             this.console = writeConsole;
+
+            string query = "CREATE TABLE IF NOT EXISTS agent_" + agentID + "_KnowledgeTable (" +
+                              "id INTEGER PRIMARY KEY AUTO_INCREMENT," +
+
+                              "how_many_data INTEGER NOT NULL," +
+                              "preferred_laptop INTEGER NOT NULL," +
+                              "size_of_laptop INTEGER NOT NULL," +
+                              "laptop_usage INTEGER NOT NULL," +
+                              "laptop_battery_usage INTEGER NOT NULL," +
+                              "laptop_durability INTEGER NOT NULL," +
+                              "night_usage INTEGER NOT NULL," +
+                              "cd_player INTEGER NOT NULL," +
+
+                              "product_name varchar(120) NOT NULL," +
+                              "price INTEGER NOT NULL," +
+                              "is_sold enum('0','1') NOT NULL" +
+                            ") ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci;";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void RunAgent(ref bool stopAgent, ref List<AgentTask> sellerAgentsTab, ref List<string[]> customersProducts, ref int[] parameters, ref int[] priority, ref int maxPrice, ref int minPrice)
@@ -118,9 +150,42 @@ namespace Multi_AgentSystem_LaptopChoices
                                         output("Klient nr " + agentID + ": Przedmiot został wybrany i wynegocjowany na " + price + " zł", Color.OrangeRed);
                                         name = res[0];
                                         link = res[3];
+
+                                        //Save product in customer knowledge database if not exist
+                                        string query = "SELECT * FROM agent_" + agentID + "_KnowledgeTable" +
+                                            " WHERE `how_many_data`='" + parameters[0] + "' AND `preferred_laptop`='" + parameters[1] + "' AND `size_of_laptop`='" + parameters[2] + "' AND `laptop_usage`='" + parameters[3] + "' AND `laptop_battery_usage`='" + parameters[4] + "' AND `laptop_durability`='" + parameters[5] + "' AND `night_usage`='" + parameters[6] + "' AND `cd_player`='" + parameters[7] + "' AND `product_name`='" + res[0] + "' AND `price`='" + price + "'";
+                                        Console.WriteLine(query);
+
+                                        MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                                        MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+                                        commandDatabase.CommandTimeout = 60;
+                                        MySqlDataReader reader;
+
+                                        try
+                                        {
+                                            databaseConnection.Open();
+                                            reader = commandDatabase.ExecuteReader();
+                                            if (!reader.HasRows)
+                                            {
+                                                query = "INSERT INTO agent_" + agentID + "_KnowledgeTable(`how_many_data`, `preferred_laptop`, `size_of_laptop`, `laptop_usage`, `laptop_battery_usage`, `laptop_durability`, `night_usage`, `cd_player`, `product_name`, `price`, `is_sold`) VALUES" +
+                                                       "('" + parameters[0] + "', '" + parameters[1] + "', '" + parameters[2] + "', '" + parameters[3] + "', '" + parameters[4] + "', '" + parameters[5] + "', '" + parameters[6] + "', '" + parameters[7] + "', '" + res[0] + "', '" + price + "', '0');";
+                                                databaseConnection = new MySqlConnection(connectionString);
+                                                commandDatabase = new MySqlCommand(query, databaseConnection);
+                                                commandDatabase.CommandTimeout = 60;
+                                                databaseConnection.Open();
+                                                reader = commandDatabase.ExecuteReader();
+                                                databaseConnection.Close();
+                                            }
+                                            databaseConnection.Close();
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show(ex.Message);
+                                        }
+
                                         haveItem = true;
                                         endOfConversation = true;
-                                        seller.recieve.Add(true);
+                                        //seller.recieve.Add(true);
                                     }
                                     else
                                     {

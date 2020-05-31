@@ -175,10 +175,30 @@ namespace Multi_AgentSystem_LaptopChoices
             System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
         }
 
-        private void SelectProduct(object sender, EventArgs e)
+        private void SelectProduct(object sender, EventArgs e, string name)
         {
+            Console.WriteLine("NAZWA: "+name);
             int agentID = int.Parse((sender as Button).Name.Substring(11));
-            output("Wybrano przedmiot klienta nr " + agentID, Color.Green);
+            output("Wybrano ostatecznie przedmiot klienta nr " + agentID, Color.Green);
+
+            string query = "UPDATE `agent_" + agentID + "_KnowledgeTable` SET `is_sold`='1' WHERE product_name = '" + name + "'";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionStringCustomer);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             resultBox.Controls.Clear();
         }
 
@@ -243,7 +263,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 dynamicButton.Text = "Wybierz tę ofertę klienta nr " + product[0];
                 dynamicButton.Name = "buttonAgent" + product[0];
                 dynamicButton.Font = new Font("Calibri", 12);
-                dynamicButton.Click += new EventHandler(SelectProduct);
+                dynamicButton.Click += new EventHandler((sender, e) => SelectProduct(sender, e, product[2]));
                 dynamicButton.Dock = DockStyle.Top;
 
                 box.Controls.Add(dynamicButton);
@@ -302,7 +322,7 @@ namespace Multi_AgentSystem_LaptopChoices
                     databaseConnection.Open();
                     reader = commandDatabase.ExecuteReader();
                     databaseConnection.Close();
-                    output("Zresetowano bazy danych klientów", Color.Red);
+                    output("Zresetowano bazy danych agentów klienta", Color.Red);
                 }
             }
             catch (Exception ex)
