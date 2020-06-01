@@ -177,7 +177,6 @@ namespace Multi_AgentSystem_LaptopChoices
 
         private void SelectProduct(object sender, EventArgs e, string name)
         {
-            Console.WriteLine("NAZWA: "+name);
             int agentID = int.Parse((sender as Button).Name.Substring(11));
             output("Wybrano ostatecznie przedmiot klienta nr " + agentID, Color.Green);
 
@@ -211,7 +210,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 {
                     if (i != j && customersProducts[i][2] == customersProducts[j][2] && customersProducts[i][3] == customersProducts[j][3])
                     {
-                        output("Znaleziono takie same produkty wśród agentów, usuwam droższe", Color.Red);
+                        output("Znaleziono takie same produkty wśród agentów, usuwam droższe lub takie same cenowo", Color.Red);
                         if(int.Parse(customersProducts[i][1]) > int.Parse(customersProducts[j][1]))
                         {
                             string[] temp = customersProducts[i];

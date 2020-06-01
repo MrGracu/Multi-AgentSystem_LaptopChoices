@@ -87,11 +87,35 @@ namespace Multi_AgentSystem_LaptopChoices
                     commandDatabase = new MySqlCommand(query, databaseConnection);
                     commandDatabase.CommandTimeout = 60;
                     databaseConnection.Open();
-                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                    reader = commandDatabase.ExecuteReader();
                     databaseConnection.Close();
                     output("Sprzedawca nr " + agentID + ": Utworzono bazę danych z produktami", Color.DarkGray);
                     rows.Clear();
                 }
+
+                query = "CREATE TABLE IF NOT EXISTS agent_" + agentID + "_KnowledgeTable (" +
+                              "id INTEGER PRIMARY KEY AUTO_INCREMENT," +
+                              "id_items INTEGER NOT NULL," +
+                              "sold_amount INTEGER NOT NULL," +
+                              "sold_precentage INTEGER NOT NULL," +
+
+                              "how_many_data INTEGER NOT NULL," +
+                              "preferred_laptop INTEGER NOT NULL," +
+                              "size_of_laptop INTEGER NOT NULL," +
+                              "laptop_usage INTEGER NOT NULL," +
+                              "laptop_battery_usage INTEGER NOT NULL," +
+                              "laptop_durability INTEGER NOT NULL," +
+                              "night_usage INTEGER NOT NULL," +
+                              "cd_player INTEGER NOT NULL," +
+
+                              "FOREIGN KEY(id_items) REFERENCES items(id)" +
+                            ") ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci;";
+
+                commandDatabase = new MySqlCommand(query, databaseConnection);
+                commandDatabase.CommandTimeout = 60;
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                databaseConnection.Close();
             }
             catch (Exception ex)
             {
@@ -105,7 +129,7 @@ namespace Multi_AgentSystem_LaptopChoices
             while (true)
             {
                 if (stopAgent) return;
-
+                
                 if (recieve.Count > 0)
                 {
                     output("Sprzedawca nr " + agentID + ": Otrzymałem parametry i rozpoczynam rozmowę z klientem", Color.Blue);
@@ -135,7 +159,7 @@ namespace Multi_AgentSystem_LaptopChoices
                         }
                     }
 
-                    Console.WriteLine(query);
+                    //Console.WriteLine(query);
                     response.Clear();
 
                     List<string[]> foundProducts = new List<string[]>();
@@ -162,7 +186,7 @@ namespace Multi_AgentSystem_LaptopChoices
                         for (int i = 0; i < foundProducts.Count; i++)
                         {
                             /* SEND PRODUCT AND HIS SPECIFICATION */
-                            Console.WriteLine(specificationQuery + "AND itemsspecification.id_items = " + foundProducts[i][0]);
+                            //Console.WriteLine(specificationQuery + "AND itemsspecification.id_items = " + foundProducts[i][0]);
 
                             string[] specification = new string[parameters.Length];
                             int pos = 0;
@@ -198,6 +222,7 @@ namespace Multi_AgentSystem_LaptopChoices
                             }
 
                             while (recieve[0] == null) { }
+                            
                             consumerSelected = (bool)recieve[0];
                             selectedID = i;
 
@@ -207,18 +232,100 @@ namespace Multi_AgentSystem_LaptopChoices
                                 response.Add(true);
 
                                 /* IF SELECTED THEN WAIT FOR PRICE SUGGESTIONS */
-                                int minimumPrice = Convert.ToInt32(Math.Round((double.Parse(foundProducts[i][3]) * ((100 - int.Parse(foundProducts[i][5])) / 100.0)), MidpointRounding.AwayFromZero));
+                                // Get precentage from knowledge base about this product price to set minimum price
+                                int sold_precentage = 0;
+
+                                query = "SELECT sold_precentage FROM agent_" + agentID + "_KnowledgeTable WHERE `id_items`='" + foundProducts[selectedID][0] + "'";
+                                commandDatabase = new MySqlCommand(query, databaseConnection);
+                                commandDatabase.CommandTimeout = 60;
+                                try
+                                {
+                                    databaseConnection.Open();
+                                    reader = commandDatabase.ExecuteReader();
+                                    if (reader.HasRows)
+                                    {
+                                        reader.Read();
+                                        sold_precentage = reader.GetInt32(0);
+                                    }
+                                    databaseConnection.Close();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+
+                                sold_precentage = int.Parse(foundProducts[i][5]) - sold_precentage;
+                                if (sold_precentage < 0) sold_precentage = 0;
+
+                                int minimumPrice = Convert.ToInt32(Math.Round((double.Parse(foundProducts[i][3]) * ((100 - sold_precentage) / 100.0)), MidpointRounding.AwayFromZero));
                                 do
                                 {
                                     while (recieve.Count == 0)
                                     {
                                         if (stopAgent) return;
-                                        Task.Delay(500);
                                     }
                                     while (recieve[0] == null) { }
                                     price = (int)recieve[0];
+                                    /*try
+                                    {
+                                        if(recieve[0] is Boolean)
+                                        {
+                                            Console.WriteLine("Wykryto błąd! Naprawiam...");
+                                            recieve.Clear();
+                                            response.Clear();
+                                            response.Add(true);
 
-                                    if (price == 0) consumerSelected = false;
+                                            while (recieve.Count == 0)
+                                            {
+                                                if (stopAgent) return;
+                                            }
+                                            while (recieve[0] == null) { }
+                                        }
+                                        price = (int)recieve[0];
+                                    }
+                                    catch (Exception)
+                                    {
+                                        Console.WriteLine("BŁAD: TYP: " + recieve[0].GetType() + ", wartość: " + recieve[0]);
+                                        throw;
+                                    }*/
+
+                                    if (price == 0)
+                                    {
+                                        // Price was too high, set that in knowledge base
+                                        query = "SELECT sold_precentage FROM agent_" + agentID + "_KnowledgeTable WHERE `id_items`='" + foundProducts[selectedID][0] + "'";
+                                        commandDatabase = new MySqlCommand(query, databaseConnection);
+                                        commandDatabase.CommandTimeout = 60;
+                                        try
+                                        {
+                                            databaseConnection.Open();
+                                            reader = commandDatabase.ExecuteReader();
+                                            bool hasRows = false;
+                                            sold_precentage = 0;
+                                            if (reader.HasRows)
+                                            {
+                                                reader.Read();
+                                                sold_precentage = reader.GetInt32(0);
+                                                hasRows = true;
+                                            }
+                                            databaseConnection.Close();
+
+                                            if (hasRows)
+                                            {
+                                                if ((sold_precentage - 1) >= 0) --sold_precentage;
+                                                query = "UPDATE agent_" + agentID + "_KnowledgeTable SET sold_precentage=" + sold_precentage + " WHERE id_items = " + foundProducts[selectedID][0];
+                                                commandDatabase = new MySqlCommand(query, databaseConnection);
+                                                commandDatabase.CommandTimeout = 60;
+                                                databaseConnection.Open();
+                                                reader = commandDatabase.ExecuteReader();
+                                                databaseConnection.Close();
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show(ex.Message);
+                                        }
+                                        consumerSelected = false;
+                                    }
                                     else
                                     {
                                         if (price < minimumPrice)
@@ -243,14 +350,60 @@ namespace Multi_AgentSystem_LaptopChoices
                         if(consumerSelected)
                         {
                             output("Sprzedawca nr " + agentID + ": Klient wybrał przedmiot, sprzedaję...", Color.Blue);
+                            //Save and update in knowledge base this product and price precentage
+                            query = "SELECT sold_amount, sold_precentage FROM agent_" + agentID + "_KnowledgeTable WHERE `id_items`='" + foundProducts[selectedID][0] + "'";
+                            commandDatabase = new MySqlCommand(query, databaseConnection);
+                            commandDatabase.CommandTimeout = 60;
+                            try
+                            {
+                                databaseConnection.Open();
+                                reader = commandDatabase.ExecuteReader();
+                                bool hasRows = false;
+                                int sold_amount = 0;
+                                int sold_precentage = 0;
+                                if (!reader.HasRows)
+                                {
+                                    query = "INSERT INTO agent_" + agentID + "_KnowledgeTable(`id_items`, `sold_amount`, `sold_precentage`, `how_many_data`, `preferred_laptop`, `size_of_laptop`, `laptop_usage`, `laptop_battery_usage`, `laptop_durability`, `night_usage`, `cd_player`) VALUES" +
+                                           "(" + foundProducts[selectedID][0] + ", 1, 1, '" + parameters[0] + "', '" + parameters[1] + "', '" + parameters[2] + "', '" + parameters[3] + "', '" + parameters[4] + "', '" + parameters[5] + "', '" + parameters[6] + "', '" + parameters[7] + "');";
+                                    databaseConnection = new MySqlConnection(connectionString);
+                                    commandDatabase = new MySqlCommand(query, databaseConnection);
+                                    commandDatabase.CommandTimeout = 60;
+                                    databaseConnection.Open();
+                                    reader = commandDatabase.ExecuteReader();
+                                    databaseConnection.Close();
+                                }
+                                else
+                                {
+                                    reader.Read();
+                                    sold_amount = reader.GetInt32(0);
+                                    sold_precentage = reader.GetInt32(1);
+                                    hasRows = true;
+                                }
+                                databaseConnection.Close();
+
+                                if(hasRows)
+                                {
+                                    if ((sold_precentage + 1) <= int.Parse(foundProducts[selectedID][5])) ++sold_precentage;
+                                    query = "UPDATE agent_" + agentID + "_KnowledgeTable SET sold_amount=" + (sold_amount + 1) + ", sold_precentage=" + sold_precentage + " WHERE id_items = " + foundProducts[selectedID][0];
+                                    commandDatabase = new MySqlCommand(query, databaseConnection);
+                                    commandDatabase.CommandTimeout = 60;
+                                    databaseConnection.Open();
+                                    reader = commandDatabase.ExecuteReader();
+                                    databaseConnection.Close();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+
                             //Change in database amount of items
-                            /*query = "UPDATE agent_" + agentID + "_productstable SET amount=" + (int.Parse(foundProducts[selectedID][2]) - 1) + " WHERE id_items = " + foundProducts[selectedID][0];
-                            Console.WriteLine(query);
+                            query = "UPDATE agent_" + agentID + "_productstable SET amount=" + (int.Parse(foundProducts[selectedID][2]) - 1) + " WHERE id_items = " + foundProducts[selectedID][0];
                             commandDatabase = new MySqlCommand(query, databaseConnection);
                             commandDatabase.CommandTimeout = 60;
                             databaseConnection.Open();
                             reader = commandDatabase.ExecuteReader();
-                            databaseConnection.Close();*/
+                            databaseConnection.Close();
 
                             output("Sprzedawca nr " + agentID + ": Zaktualizowano ilość produktów", Color.Blue);
                         }

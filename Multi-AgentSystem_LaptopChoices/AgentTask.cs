@@ -31,6 +31,8 @@ namespace Multi_AgentSystem_LaptopChoices
             else
             {
                 isBusy = true;
+                response.Clear();
+                recieve.Clear();
                 recieve.Add(parameters);
             }
             return busy;

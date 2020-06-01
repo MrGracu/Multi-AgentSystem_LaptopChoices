@@ -93,7 +93,7 @@ namespace Multi_AgentSystem_LaptopChoices
                             {
                                 /* SELLER HAVE PRODUCT - CHECK DO THE PRODUCT MEET THE REQUIREMENTS */
                                 bool goodPriority = false;
-                                if (int.Parse(res[4]) >= priority[0] && int.Parse(res[5]) >= priority[1] && int.Parse(res[6]) >= priority[2] && int.Parse(res[7]) >= priority[3] &&
+                                if (int.Parse(res[4]) >= priority[0] && int.Parse(res[5]) >= priority[1] && int.Parse(res[6]) >= priority[2] && int.Parse(res[7]) >= priority[3] && int.Parse(res[2]) >= minPrice && 
                                    int.Parse(res[8]) >= priority[4] && int.Parse(res[9]) >= priority[5] && int.Parse(res[10]) >= priority[6] && int.Parse(res[11]) >= priority[7]) goodPriority = true;
 
                                 if(goodPriority)
@@ -105,7 +105,8 @@ namespace Multi_AgentSystem_LaptopChoices
                                     {
                                         if (stopAgent) return;
                                     }
-                                    
+                                    seller.response.Clear();
+
                                     /* PRODUCT MEET THE REQUIREMENTS - NEGOTIATE THE PRICE */
                                     price = Int32.Parse(res[2]);
                                     output("Klient nr " + agentID + ": Sprzedawca nr " + seller.id + " znalazł pasujący przedmiot w cenie " + price + " zł, rozpoczynam negocjacje od najniższej (" + minPrice + " zł)", Color.OrangeRed);
@@ -116,15 +117,17 @@ namespace Multi_AgentSystem_LaptopChoices
                                     {
                                         seller.response.Clear();
                                         seller.recieve.Add(price);
-                                        while (seller.response.Count == 0) //Wait for response did price is accepted
-                                        {
-                                            if (stopAgent) return;
-                                        }
 
                                         if (price != 0)
                                         {
+                                            while (seller.response.Count == 0) //Wait for response did price is accepted
+                                            {
+                                                if (stopAgent) return;
+                                            }
                                             while (seller.response[0] == null) { }
+                                            
                                             priceAccepted = (bool)seller.response[0];
+                                            seller.response.Clear(); //ADDED
 
                                             if (!priceAccepted)
                                             {
@@ -144,7 +147,6 @@ namespace Multi_AgentSystem_LaptopChoices
                                         }
                                     } while (!priceAccepted && price != -1);
 
-                                    seller.response.Clear();
                                     if (priceAccepted)//if (price > minPrice && price < maxPrice)
                                     {
                                         output("Klient nr " + agentID + ": Przedmiot został wybrany i wynegocjowany na " + price + " zł", Color.OrangeRed);
@@ -154,7 +156,6 @@ namespace Multi_AgentSystem_LaptopChoices
                                         //Save product in customer knowledge database if not exist
                                         string query = "SELECT * FROM agent_" + agentID + "_KnowledgeTable" +
                                             " WHERE `how_many_data`='" + parameters[0] + "' AND `preferred_laptop`='" + parameters[1] + "' AND `size_of_laptop`='" + parameters[2] + "' AND `laptop_usage`='" + parameters[3] + "' AND `laptop_battery_usage`='" + parameters[4] + "' AND `laptop_durability`='" + parameters[5] + "' AND `night_usage`='" + parameters[6] + "' AND `cd_player`='" + parameters[7] + "' AND `product_name`='" + res[0] + "' AND `price`='" + price + "'";
-                                        Console.WriteLine(query);
 
                                         MySqlConnection databaseConnection = new MySqlConnection(connectionString);
                                         MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -190,7 +191,7 @@ namespace Multi_AgentSystem_LaptopChoices
                                     else
                                     {
                                         output("Klient nr " + agentID + ": Negocjacje ceny się nie powiodły, czekam na inne propozycje", Color.OrangeRed);
-                                        seller.recieve.Add(false);
+                                        //seller.recieve.Add(false);
                                     }
                                 }
                                 else
@@ -207,6 +208,7 @@ namespace Multi_AgentSystem_LaptopChoices
                                 endOfConversation = true;
                             }
                         } while (!endOfConversation);
+                        //seller.response.Clear();
 
                         if (haveItem) break;
                     }
