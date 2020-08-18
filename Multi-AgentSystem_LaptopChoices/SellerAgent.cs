@@ -344,7 +344,7 @@ namespace Multi_AgentSystem_LaptopChoices
 
                                 if(price > 0) break;
                             }
-                            else output("Sprzedawca nr " + agentID + ": Klient odrzucił przedmiot, sprawdzam czy mam inny, aby przekazać...", Color.Blue);
+                            //else output("Sprzedawca nr " + agentID + ": Klient odrzucił przedmiot, sprawdzam czy mam inny, aby przekazać...", Color.Blue);
                         }
 
                         if(consumerSelected)

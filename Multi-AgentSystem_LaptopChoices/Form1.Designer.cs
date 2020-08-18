@@ -457,7 +457,7 @@
             "Bardzo Dużo",
             "Dużo",
             "Mało"});
-            this.how_many_dataSelect.Location = new System.Drawing.Point(20, 10);
+            this.how_many_dataSelect.Location = new System.Drawing.Point(20, 11);
             this.how_many_dataSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.how_many_dataSelect.Name = "how_many_dataSelect";
             this.how_many_dataSelect.Size = new System.Drawing.Size(124, 23);
@@ -546,7 +546,7 @@
             "Ciemny",
             "Jasny",
             "Kolorowy"});
-            this.preferred_laptopSelect.Location = new System.Drawing.Point(20, 11);
+            this.preferred_laptopSelect.Location = new System.Drawing.Point(20, 10);
             this.preferred_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.preferred_laptopSelect.Name = "preferred_laptopSelect";
             this.preferred_laptopSelect.Size = new System.Drawing.Size(124, 23);
@@ -690,7 +690,7 @@
             "Duży",
             "Średni",
             "Mały"});
-            this.size_of_laptopSelect.Location = new System.Drawing.Point(20, 10);
+            this.size_of_laptopSelect.Location = new System.Drawing.Point(20, 11);
             this.size_of_laptopSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.size_of_laptopSelect.Name = "size_of_laptopSelect";
             this.size_of_laptopSelect.Size = new System.Drawing.Size(124, 23);
@@ -780,7 +780,7 @@
             "Granie w Gry",
             "Multimedia i Przeglądanie Internetu",
             "Prace Graficzne"});
-            this.laptop_usageSelect.Location = new System.Drawing.Point(20, 11);
+            this.laptop_usageSelect.Location = new System.Drawing.Point(20, 10);
             this.laptop_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.laptop_usageSelect.Name = "laptop_usageSelect";
             this.laptop_usageSelect.Size = new System.Drawing.Size(124, 23);
@@ -924,7 +924,7 @@
             "Często",
             "Sporadycznie",
             "Rzadko"});
-            this.laptop_battery_usageSelect.Location = new System.Drawing.Point(20, 10);
+            this.laptop_battery_usageSelect.Location = new System.Drawing.Point(20, 11);
             this.laptop_battery_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.laptop_battery_usageSelect.Name = "laptop_battery_usageSelect";
             this.laptop_battery_usageSelect.Size = new System.Drawing.Size(124, 23);
@@ -1012,7 +1012,7 @@
             this.cd_playerSelect.Items.AddRange(new object[] {
             "Tak",
             "Nie"});
-            this.cd_playerSelect.Location = new System.Drawing.Point(20, 11);
+            this.cd_playerSelect.Location = new System.Drawing.Point(20, 10);
             this.cd_playerSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.cd_playerSelect.Name = "cd_playerSelect";
             this.cd_playerSelect.Size = new System.Drawing.Size(124, 23);
@@ -1101,7 +1101,7 @@
             "Bardzo",
             "Trochę",
             "Nie Musi"});
-            this.laptop_durabilitySelect.Location = new System.Drawing.Point(20, 11);
+            this.laptop_durabilitySelect.Location = new System.Drawing.Point(20, 10);
             this.laptop_durabilitySelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.laptop_durabilitySelect.Name = "laptop_durabilitySelect";
             this.laptop_durabilitySelect.Size = new System.Drawing.Size(124, 23);
@@ -1190,7 +1190,7 @@
             "Często",
             "Sporadycznie",
             "Rzadko"});
-            this.night_usageSelect.Location = new System.Drawing.Point(20, 10);
+            this.night_usageSelect.Location = new System.Drawing.Point(20, 11);
             this.night_usageSelect.Margin = new System.Windows.Forms.Padding(20, 0, 10, 3);
             this.night_usageSelect.Name = "night_usageSelect";
             this.night_usageSelect.Size = new System.Drawing.Size(124, 23);
