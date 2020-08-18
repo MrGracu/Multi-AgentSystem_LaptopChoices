@@ -250,7 +250,7 @@ namespace Multi_AgentSystem_LaptopChoices
                 dynamicLinkLabel.VisitedLinkColor = Color.Black;
                 dynamicLinkLabel.LinkColor = Color.Black;
                 dynamicLinkLabel.DisabledLinkColor = Color.Black;
-                dynamicLinkLabel.Text = "Link do sklepu";
+                dynamicLinkLabel.Text = "Link do strony";
                 dynamicLinkLabel.Name = "linkAgent" + product[0];
                 dynamicLinkLabel.Font = new Font("Calibri", 12);
                 dynamicLinkLabel.Links.Add(0, dynamicLinkLabel.Text.Length, product[3]);

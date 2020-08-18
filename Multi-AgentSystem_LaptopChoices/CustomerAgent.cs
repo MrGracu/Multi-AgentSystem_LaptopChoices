@@ -137,7 +137,8 @@ namespace Multi_AgentSystem_LaptopChoices
                                                     price = 0;
                                                     output("Klient nr " + agentID + ": Przerywam negocjacje, ponieważ cena była by większa od maksymalnej", Color.OrangeRed);
                                                 }
-                                                else output("Klient nr " + agentID + ": Poprzednia propozycja została odrzucona, więc oferuję sprzedawcy cenę " + price + " zł", Color.OrangeRed);
+                                                /* COMMENTED BECAUSE IT SLOWS DOWN APPLICATION */
+                                                //else output("Klient nr " + agentID + ": Poprzednia propozycja została odrzucona, więc oferuję sprzedawcy cenę " + price + " zł", Color.OrangeRed);
                                             }
                                         }
                                         else
