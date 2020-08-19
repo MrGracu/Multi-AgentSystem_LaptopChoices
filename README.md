@@ -1,5 +1,4 @@
-# Multi-AgentSystem_LaptopChoices
-[C#] Multi-agent system - Laptop Choices.  
+# [C#] Multi-AgentSystem_LaptopChoices
 
 ## Description
 
