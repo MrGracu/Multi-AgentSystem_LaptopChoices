@@ -1,4 +1,12 @@
-﻿using MySql.Data.MySqlClient;
+﻿/*
+ ****************************************************************************
+ *                                                                          *
+ *  Copyright © by Gracjan Mika ( https://gmika.pl ). All rights reserved.  *
+ *                                                                          *
+ ****************************************************************************
+ */
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -328,6 +336,17 @@ namespace Multi_AgentSystem_LaptopChoices
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Autor: Gracjan Mika ( https://gmika.pl )\n\n   Copyright © 2020 by Gracjan Mika", "O Programie", MessageBoxButtons.OK);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
         }
 
         private void clearSellersDatabaseButton_Click(object sender, EventArgs e)

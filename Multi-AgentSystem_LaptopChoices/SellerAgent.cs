@@ -1,4 +1,12 @@
-﻿using MySql.Data.MySqlClient;
+﻿/*
+ ****************************************************************************
+ *                                                                          *
+ *  Copyright © by Gracjan Mika ( https://gmika.pl ). All rights reserved.  *
+ *                                                                          *
+ ****************************************************************************
+ */
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

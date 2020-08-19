@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ ****************************************************************************
+ *                                                                          *
+ *  Copyright © by Gracjan Mika ( https://gmika.pl ). All rights reserved.  *
+ *                                                                          *
+ ****************************************************************************
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
